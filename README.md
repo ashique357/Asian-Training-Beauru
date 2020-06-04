@@ -1,2 +1,1 @@
-# extra
 # Asian-Training-Beauru
