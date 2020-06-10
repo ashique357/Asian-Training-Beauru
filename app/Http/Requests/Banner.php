@@ -13,7 +13,7 @@ class Banner extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,16 +26,21 @@ class Banner extends FormRequest
         return [
             'banner_title' => 'required|string',
             'banner_url'=>'required|string',
-            'banner_image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'banner_paragraph'=>'required|string|max:500',
+            // 'banner_image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'btn_name'=>'required|string',
         ];
     }
 
     public function messages()
     {
         return [
+            // 'banner_image.required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'  => 'Provide image with the allowed size',
             'banner_title.required|string' => 'Title field is required',
+            'banner_paragraph.required|string|max:500' => 'Paragraph is required and not exceed than 500',
             'banner_url.required|string'  => 'Provide the button url',
-            'banner_image.required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'  => 'Provide image with the allowed size',
-            ];
+            'btn_name.required'=>"Provide Button name.ex:President's message",    
+        ];
     }
 }
+

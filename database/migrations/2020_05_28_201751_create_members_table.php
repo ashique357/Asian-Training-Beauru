@@ -22,7 +22,7 @@ class CreateMembersTable extends Migration
             $table->string('phone');
             $table->string('address')->nullable();
             $table->string('desg')->nullable();
-            $table->string('org')->nullable();
+            // $table->string('org')->nullable();
             $table->string('exp')->nullable();
             $table->string('photo')->default('avatar.jpg')->nullable();
             $table->text('msg')->nullable();

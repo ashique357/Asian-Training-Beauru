@@ -9,6 +9,7 @@
 		</header>
 		
 			@yield('main_content')
+			@include('includes.counter')
 		</div>
 		@include('includes.footer')
 	</div>

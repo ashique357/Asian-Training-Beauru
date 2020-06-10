@@ -34,13 +34,31 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
+							@if(Auth::user()->role ==1 || Auth::user()->member !=0)
+								@if(Auth::user()->role ==1)
+								
+								<li>
+								<a class="dropdown-item" href="admin/dashboard">
+                                        {{ __('Dashboard') }}
+                                    </a>
+								</li>
+							
+								@endif
+								@elseif(Auth::user()->member !=0)
+								<li>
+								<a class="dropdown-item" href="dashboard">
+                                        {{ __('Dashboard') }}
+                                    </a>
+								</li>
+							@endif
                         @endguest
+		
+                                    
 					{{-- <li> <a href="#" class="wm-search-btn" data-toggle="modal" data-target="#ModalSearch"><i class="wmicon-search"></i></a> --}}
 					</li>
 				</ul>

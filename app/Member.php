@@ -9,7 +9,7 @@ class Member extends Model
     protected $fillable=[
     'name','country','email',
     'phone','address','desg',
-    'org','exp','photo','msg',
+    'exp','photo','msg',
     'linkedin','con_person',
     'web','employee','approved'
     ];
@@ -21,4 +21,5 @@ class Member extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
 }

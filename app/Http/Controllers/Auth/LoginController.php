@@ -33,7 +33,17 @@ class LoginController extends Controller
      * @var string
      */
     
-    protected $redirectTo = '/';
+    // protected $redirectTo = '/';
+    protected function redirectTo(){
+        $role = Auth::user()->role;
+        if($role==1){
+            return redirect('admin/dashboard');
+        }
+        elseif($role ==0){
+            return redirect('/');
+        }
+    }
+    
 
     /**
      * Create a new controller instance.
@@ -58,9 +68,8 @@ class LoginController extends Controller
        }
        
        $authUser = $this->checkUser($user, $provider);
-    //    dd($authUser);
        Auth::login($authUser, true);
-       return redirect($this->redirectTo);
+       return $this->redirectTo();
     }
     public function checkUser($providerUser, $provider)
     {
@@ -84,8 +93,5 @@ class LoginController extends Controller
           return $user;
       }
     }
- 
-
-    
 }
 

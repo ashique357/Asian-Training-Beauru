@@ -24,6 +24,6 @@ class LandingPageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('includes.*','App\Http\View\Composers\LandingComposer');    
+        View::composer(['includes.*','User.Pages.*'],'App\Http\View\Composers\LandingComposer');    
     }
 }

@@ -23,21 +23,26 @@
 							</li>
 							<li><a href="#">About Us</a>
 								<ul class="wm-dropdown-menu">
-									<li><a href="">Our Details</a>
+									<li><a href="/about">Why us?</a>
 									</li>
-									<li><a href="">President's Message</a>
+									<li><a href="/president-message">President's Message</a>
 									</li>
-									<li><a href="">Our Team</a>
+									<li><a href="/our-team">Our Team</a>
 									</li>
 								</ul>
 							</li>
 							<li><a href="#">Membership</a>
 								<ul class="wm-dropdown-menu">
-									<li><a href="">Membership Benefit</a>
+									<li><a href="/benefit-of-membership">Membership Benefit</a>
 									</li>
-									<li><a href="">How To Become A Member</a>
+									<li><a href="/way-to-become-a-member">How To Become A Member</a>
 									</li>
-									<li><a href="">Apply To Be A Member</a>
+									<li><a href="#">Apply To Be A Member</a>
+									<ul class="wm-dropdown-menu">
+									<li><a href="/member/registration">Individual</a></li>
+									<li><a href="/member/corporate/registration">Corporate</a></li>
+									<li><a href="/member/training-provider/registration">Training Provider</a></li>
+									</ul>
 									</li>
 								</ul>
 							</li>

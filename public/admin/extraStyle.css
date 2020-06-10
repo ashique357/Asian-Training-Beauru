@@ -1,0 +1,13 @@
+.table-image{
+    height:200px;width:80px;
+  }
+
+.card-class{
+  text-align: center;
+}
+
+.button-group li{
+  display: inline;
+  margin: 0px;
+  z-index: 999;
+}

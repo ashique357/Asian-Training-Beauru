@@ -50,15 +50,15 @@
 								<ul class="row">
 									<li class="col-md-4"> <span class="wm-service-icon"><i class="wmicon-pin"></i></span>
 										<h5 class="wm-color">Address</h5>
-										<p>80 PLAYFAIR ROAD BLOCK A #03-04 SINGAPORE 367998</p>
+										<p>{{$data['address']}}</p>
 									</li>
 									<li class="col-md-4"> <span class="wm-service-icon"><i class="wmicon-phone"></i></span>
 										<h5 class="wm-color">Phone & Fax</h5>
-										<p>+1 234-567-8910</p>
+										<p>{{$data['phone']}}</p>
 									</li>
 									<li class="col-md-4"> <span class="wm-service-icon"><i class="wmicon-letter"></i></span>
 										<h5 class="wm-color">E-mail</h5>
-										<p><a href="mailto:name@email.com">connects@trainersbureau.org</a>  <a href="mailto:name@email.com">support@university.com</a>
+										<p><a href="">{{$data['email']}}</a>
 										</p>
 									</li>
 								</ul>
@@ -70,7 +70,7 @@
 								</li>
 								<li><a href="#"><i class="wm-color wmicon-social3"></i> Linkedin</a>
 								</li>
-								<li><a href="#"><i class="wm-color wmicon-vimeo"></i> Vimeo</a>
+								<!-- <li><a href="#"><i class="wm-color wmicon-vimeo"></i> Vimeo</a> -->
 								</li>
 							</ul>
 						</div>

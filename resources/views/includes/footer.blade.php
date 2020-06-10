@@ -1,19 +1,5 @@
 <!--// Footer \\-->
 <footer id="wm-footer" class="wm-footer-one">
-	<!--// FooterNewsLatter \\-->
-	<!-- <div class="wm-footer-newslatter">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<form> <i class="wmicon-interface2"></i>
-						<input type="text" value="Enter your e-mail address" onblur="if(this.value == '') { this.value ='Enter your e-mail address'; }" onfocus="if(this.value =='Enter your e-mail address') { this.value = ''; }">
-						<input type="submit" value="Subscribe to our newsletter">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!--// FooterNewsLatter \\-->
 	<!--// FooterWidgets \\-->
 	<div class="wm-footer-widget">
 		<div class="container">
@@ -23,10 +9,9 @@
 						<img src="{{asset('images/atb.jpg')}}" alt="">
 					</a>
 					<ul>
-						<li><i class="wm-color wmicon-pin"></i> 80 PLAYFAIR ROAD BLOCK A #03-04 SINGAPORE 367998</li>
-						<li><i class="wm-color wmicon-phone"></i> +1 234-567-8910
-							<br>+2 222-333-4444</li>
-						<li><i class="wm-color wmicon-letter"></i>  <a href="mailto:name@email.com">connects@trainersbureau.org</a>  <a href="mailto:name@email.com">connects@trainersbureau.org</a>
+						<li><i class="wm-color wmicon-pin"></i> {{$data['address']}}</li>
+						<li><i class="wm-color wmicon-phone"></i> {{$data['phone']}}</li>
+						<li><i class="wm-color wmicon-letter"></i>  <a href="">{{$data['email']}}</a>
 						</li>
 					</ul>
 					<div class="wm-footer-icons">

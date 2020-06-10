@@ -10,4 +10,5 @@
     </div>
     @include('Admin.includes.footerLinks')
 </body>
+
 </html>

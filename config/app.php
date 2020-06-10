@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\AdminSeviceProvider::class,
+        App\Providers\TeamServiceProvider::class,
         App\Providers\LandingPageServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 

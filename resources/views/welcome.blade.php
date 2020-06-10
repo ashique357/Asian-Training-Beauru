@@ -13,6 +13,7 @@
 			@include('includes.faculty')
 			@include('includes.popularCourse')
 			@include('includes.latest')
+			<!-- @include('includes.counter') -->
             @include('includes.contact')
 		</div>
 		@include('includes.footer')

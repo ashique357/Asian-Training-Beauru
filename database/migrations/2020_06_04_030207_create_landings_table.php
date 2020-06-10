@@ -21,13 +21,14 @@ class CreateLandingsTable extends Migration
             $table->string('email')->nullable();
             $table->string('time')->nullable();
             //menu
-            // $table->string('menu_id')->nullable();
+           
             
             //banner
             $table->string('banner_image')->nullable();
             $table->string('banner_paragraph')->nullable();
             $table->string('banner_title')->nullable();
             $table->string('banner_url')->nullable();
+            $table->string('btn_name')->nullable();
 
             //course
             $table->string('course_title')->nullable();
@@ -37,13 +38,7 @@ class CreateLandingsTable extends Migration
             $table->string('faculty_title')->nullable();
             $table->string('faculty_paragraph')->nullable();
             $table->string('faculty_url')->nullable();
-            //$table->string('team_member_id')->nullable();
-
-            //popular course
-            // $table->string('popular_course_id')->nullable();
-
-            //blog post
-            // $table->string('blog_id')->nullable();
+           
 
             //extras
             $table->string('fb_url')->nullable();
@@ -51,6 +46,18 @@ class CreateLandingsTable extends Migration
             $table->string('f_para1')->nullable();
             $table->string('f_para2')->nullable();
             $table->string('f_para3')->nullable();
+
+            //about-section
+            $table->string('about_image')->nullable();
+            $table->longtext('about_content')->nullable();
+            $table->string('about_president_image')->nullable();
+            $table->longtext('about_saying')->nullable();
+
+            //membership-section
+            $table->string('membership_image')->nullable();
+            $table->longtext('membership_benefit')->nullable();
+            $table->longtext('membership_way')->nullable();
+            
         });
     }
 

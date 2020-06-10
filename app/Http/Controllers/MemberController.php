@@ -12,10 +12,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\ImageManager;
 use Image;
+use App\Traits\ImageTrait;
 
 
 class MemberController extends Controller
 {
+    use ImageTrait;
     public function __construct()
     {
         $this->middleware('auth');
@@ -42,14 +44,11 @@ class MemberController extends Controller
         $m->member_type=$request->member_type;
         $m->user_id=Auth::user()->id;
         $m->reg_id= 'M_'.mt_rand(1000000, 9999999);
-        if($request->hasFile('photo')){
-            $img=$request->file('photo');
-            $title= time().'.'.$img->getClientOriginalExtension();
-            $filePath=public_path('/uploads/images/');
-            $resize=Image::make($img);
-            $resize->resize(150,150)->save($filePath.'/'.$title);
-            $m->photo=$resize->basename;
-        }
+        $image_field='photo';
+        $h=150;
+        $w=150;
+        $image=$this->imageUpload($request,$image_field,'/uploads/images',$h,$w);
+        $m->photo=$image;
         $m->save();
         return redirect()->back()->with('success', 'Congratulation!!!
         You have successfully apply for the membership.Stay Connected');

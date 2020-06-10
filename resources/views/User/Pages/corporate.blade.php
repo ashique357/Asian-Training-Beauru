@@ -19,6 +19,7 @@
     </div>    
 </div>
 
+<div class="container-fluid">
 <div class="col-md-12">
    <div class="wm-form-wrap wm-typography-element">
       <div class="row">
@@ -127,5 +128,6 @@
          </div>
       </div>
    </div>
+</div>
 </div>
 @endsection

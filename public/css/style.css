@@ -1247,7 +1247,7 @@ address { font-style: italic; }
 }
 /* mini header */
 .wm-mini-header {
-    background-image: url("extra-images/mini-header.jpg");
+    background-image: url("/public/extra-images/mini-header.jpg");
     background-repeat: no-repeat;
     text-align: center;
     padding: 75px 0px 69px 0px;
@@ -6675,6 +6675,7 @@ aside .widget {
     float: left;
     padding: 14px;
     width: 100%;
+    margin-top: 10px;
 }
 .wm-form-listing {
     float: left;
@@ -7289,7 +7290,7 @@ aside .widget {
             transition: all 0.4s ease-in-out;
 }
 .widget_course-price ul {
-    background-color: #f7f7f7;
+    background-color: #293054;
     float: left;
     padding: 19px 23px;
     width: 100%;
@@ -7306,7 +7307,7 @@ aside .widget {
     width: 100%;
 }
 .widget_course-price > ul > li > a {
-    color: #424242;
+    color: #fffdfd;
     float: left;
     font-size: 15px;
     padding: 0px 13px;
