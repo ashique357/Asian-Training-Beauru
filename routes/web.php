@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/1', function () {
+    return view('email.membership');
+});
+
 
 
 Auth::routes(['verify' => true]);
@@ -28,16 +32,11 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 // Admin routes
 Route::get('/admin/dashboard','AdminController@index');
 Route::get('/admin/landing-page-setup','AdminController@landing');
-//member-individual
-Route::get('/member/registration','MemberController@person_index');
-Route::post('/member/registration','MemberController@post_memberPerson');
-//member-training provider
-Route::get('/member/training-provider/registration','MemberController@trainer_index');
-Route::post('/member/training-provider/registration','MemberController@post_trainer');
 
-//corporate member
-Route::get('/member/corporate/registration','MemberController@organization_index');
-Route::post('/member/corporate/registration','MemberController@post_organization');
+//member-application
+Route::get('/member/registration','MemberController@index');
+Route::post('/member/registration','MemberController@store');
+
 
 Route::post('/top-nav','AdminController@topNav');
 Route::post('/banner','AdminController@banner');
@@ -75,3 +74,20 @@ Route::post('/admin/benefit-of-membership','AdminController@benefitStore');
 Route::get('/admin/membership-request','AdminController@indexMember');
 Route::get('/admin/membership-request/{id}','AdminController@info');
 Route::post('/admin/membership-request/{id}/accept','AdminController@accept');
+Route::post('/admin/membership-request/{id}/decline','AdminController@declined');
+
+//search member verification
+Route::get('/member-verify','MemberController@search');
+Route::post('/member-verify','MemberController@searchResult');
+
+//opportunity
+Route::get('/opportunity','OpportunityController@index');
+
+
+//new
+
+Route::get('/1', function () {
+    return view('new.edubin.layouts.master');
+});
+
+

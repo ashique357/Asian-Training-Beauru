@@ -12,10 +12,13 @@ use Intervention\Image\ImageManager;
 use Image;
 use App\Traits\ImageTrait;
 use App\Traits\RichTextTrait;
+use App\Traits\EmailTrait;
 use App\Member;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MembershipMail;
 
 class AdminController extends Controller
-{   use ImageTrait,RichTextTrait;
+{   use ImageTrait,RichTextTrait,EmailTrait;
     public function __construct()
     {
         
@@ -309,7 +312,7 @@ class AdminController extends Controller
     }
 
     public function indexMember(){
-        $members=Member::all();
+        $members=Member::latest()->paginate(10);
         return view('Admin.Pages.Membership.index')->with('members',$members);
     }
 
@@ -327,7 +330,40 @@ class AdminController extends Controller
         $b->member='1';
         $b->save();
         $member->save();
-        //send email to the user
+        $template='email.membership';
+        $to_name=$member->name;
+        $to_email=$member->email;
+        $subject='Application for membership';
+        $from="asian@gmail.com";
+        $company="Asian Training Beauru";
+        $data=['name'=>$member->name,
+            'email'=>$member->email,
+            'phone'=>$member->phone,
+            'reg'=>$member->reg_id,
+            'address'=>$member->address,
+            'country'=>$member->country,
+            'desg'=>$member->desg,
+            'linkedin'=>$member->linkedin,
+            'year'=>$member->exp,
+            'employee'=>$member->employee,
+            'con_person'=>$member->con_person,
+            'web'=>$member->web,
+            'img'=>$member->image,
+            'type'=>$member->type
+        ];  
+        $this->sendMail($template,$to_name,$to_email,$data,$subject,$from,$company);
+        return redirect()->back()->with('success', "Membership Request Accepted for $member->email");
     }
+
+    public function declined($id){
+        $member=Member::find($id);
+        $member->approved=0;
+        $b=$member->user()->first();
+        $b->member='0';
+        $b->save();
+        $member->save();
+        return redirect()->back()->with('success', "Membership Request Declined for $member->email");
+    }
+
 }
 

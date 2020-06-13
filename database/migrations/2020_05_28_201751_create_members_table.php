@@ -16,20 +16,37 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('name');
+            // individual
+            $table->string('name')->nullable();
             $table->string('country')->nullable();
-            $table->string('email');
-            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->string('desg')->nullable();
-            // $table->string('org')->nullable();
-            $table->string('exp')->nullable();
             $table->string('photo')->default('avatar.jpg')->nullable();
-            $table->text('msg')->nullable();
+            $table->string('desg')->nullable();
             $table->string('linkedin')->nullable();
-            $table->string('con_person')->nullable();
+            $table->string('exp')->nullable();
+            $table->longText('msg')->nullable();
+            // $table->string('org')->nullable();
+            
+            // provider
+            $table->string('tp_name')->nullable();
+            $table->string('tp_email')->nullable();
+            $table->string('tp_address')->nullable();
+            $table->string('tp_phone')->nullable();
             $table->string('web')->nullable();
+            $table->string('tp_exp')->nullable();
+            $table->longText('tp_msg')->nullable();
+            $table->string('con_person')->nullable();
+
+            // corporate
+            $table->string('org_name')->nullable();
             $table->string('employee')->nullable();
+            $table->string('org_con_person')->nullable();
+            $table->string('org_email')->nullable();
+            $table->string('org_phone')->nullable();
+            $table->longText('org_msg')->nullable();
+            
             $table->string('member_type');
             $table->boolean('approved')->default('0');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

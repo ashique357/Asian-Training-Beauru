@@ -1,54 +1,60 @@
-@extends('partials.landingLayout') @section('main_content')
-<div class="wm-mini-header"> <span class="wm-blue-transparent"></span>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="wm-mini-title">
-					<h1>President's Message</h1> 
-				</div>
-				<div class="wm-breadcrumb">
-					<ul>
-						<li><a href="/">Home</a>
-						</li>
-						<li><a href="/president-message">President's Message</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="wm-main-content">
-	<!--// Main Section \\-->
-	<div class="wm-main-section">
-		<div class="container">
-			<div class="row">
-				<aside class="col-md-3">
-					<div class="widget widget_course-price">
-						<div class="wm-widget-heading">
-							<h2>Quick Links</h2>
-						</div>
-						<ul>
-							<li><a href="/about">Why us?</a>
-							</li>
-							<li>
-								<a href="/president-message">
-									</i>President's Message</li>
-							<li><a href="/team">Our Team</a>
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<div class="col-md-9">
-					<div class="wm-blog-single">
-						<figure class="wm-detail-thumb" style="width:100%">
-							<img src="uploads/images/{{$data['about_president_image']}}" alt=""></figure>
-					</div>
-					<div class="wm-detail-editore">{!! $data['about_saying']!!}</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--// Main Section \\-->
-	<!--// Main Section \\-->
-</div>@endsection
+@extends('new.edubin.partials.main') 
+@section('content')
+<section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url(new/images/page-banner-1.jpg)">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="page-banner-cont">
+               <h2>Why Us?</h2>
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="/">Home</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">President's Message</li>
+                  </ol>
+               </nav>
+            </div>
+            <!-- page banner cont -->
+         </div>
+      </div>
+      <!-- row -->
+   </div>
+   <!-- container -->
+</section>
+
+<section id="blog-singel" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-8">
+                  <div class="blog-details mt-30">
+                      <div class="thum">
+                          <img src="uploads/images/{{$data['about_president_image']}}" alt="Blog Details" style="width:100%">
+                      </div>
+                      <div class="cont">
+                      {!! $data['about_saying']!!}
+                      </div> <!-- cont -->
+                  </div> <!-- blog details -->
+              </div>
+               <div class="col-lg-4">
+                   <div class="saidbar">
+                       <div class="row">
+                           <div class="col-lg-12 col-md-6">
+                               
+                               <div class="categories mt-30">
+                                   <h4>Quick Links</h4>
+                                   <ul>
+                                       <li><a href="#">Why Us?</a></li>
+                                       <li><a href="/president-message">President's Message</a></li>
+                                       <li><a href="/our-team">Our Team</a></li>
+                                       
+                                   </ul>
+                               </div>
+                           </div> <!-- categories -->
+                           
+                       </div> <!-- row -->
+                   </div> <!-- saidbar -->
+               </div>
+           </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+@endsection

@@ -12,7 +12,7 @@
 						<li class="breadcrumb-item"><a href="#">Dashboard</a>
 						</li>
 						<li class="breadcrumb-item active"><a href="#">Membership</a>
-						</li>
+		 				</li>
 						<li class="breadcrumb-item active">Member Request</li>
 					</ol>
 				</div>
@@ -38,41 +38,51 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12">
-                            <table class="table table-striped">
+                            <table class="table table-striped fixed">
                             <?php $count=$members->count()?>
                                 <thead>
                                     <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Contact No</th>
-									<th scope="col">Application Type</th>
-                                    <th scope="col">Details</th>
-                                    <th scope="col">Accept</th>
-                                    <th scope="col">Decline</th>
+                                    <th scope="col" width="20px">#</th>
+                                    <th scope="col" width="100px">Name</th>
+                                    <th scope="col" width="120px">Email</th>
+                                    <th scope="col" width="90px">Contact No</th>
+									<th scope="col" width="100px">Application Type</th>
+                                    <th scope="col" width="70px">Details</th>
+                                    <th scope="col" width="70px">Accept</th>
+                                    <th scope="col" width="70px">Decline</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($members as $m)
                                     <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$m->name}}</td>
+                                    @if($m->member_type == 1)
+									<td>{{$m->name}}</td>
                                     <td>{{$m->email}}</td>
                                     <td>{{$m->phone}}</td>
-									@if($m->member_type == 1)
 									<td>Individual</td>
 									@elseif($m->member_type == 2)
+									<td>{{$m->tp_name}}</td>
+                                    <td>{{$m->tp_email}}</td>
+                                    <td>{{$m->tp_phone}}</td>
 									<td>Training Provider</td>
-									@else
+									@elseif($m->member_type == 3)
+									<td>{{$m->org_name}}</td>
+                                    <td>{{$m->org_email}}</td>
+                                    <td>{{$m->org_phone}}</td>
 									<td>Corporate</td>
 									@endif
                                     <td><a href="/admin/membership-request/{{$m->id}}"><button class="btn btn-primary btn-sm">View Info</button></a></td>
-                                    <form action="/admin/membership-request/{{$m->id}}/accept" method="post">
+                                    @if($m->approved==0)
+									<form action="/admin/membership-request/{{$m->id}}/accept" method="post">
 									@csrf
 									<td><a href=""><button class="btn btn-primary btn-sm">Accept</button></a></td>
 									</form>
+									@else
+									<td>Accepted</td>
+									@endif
+									<form action="/admin/membership-request/{{$m->id}}/decline" method="post">
 									@csrf
-									<form action="">
                                     <td><a href=""><button class="btn btn-danger btn-sm">Decline</button></a></td>
 									</form>
 									</tr>
@@ -82,7 +92,7 @@
 							</div>
 						</div>
 					</div>
-                    
+                    {{$members->links()}}
 			</div>
 			<!-- Slider Content -->
 		</div>

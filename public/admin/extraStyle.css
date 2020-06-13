@@ -11,3 +11,6 @@
   margin: 0px;
   z-index: 999;
 }
+
+table.fixed { table-layout:fixed; }
+table.fixed td { overflow: hidden; }
