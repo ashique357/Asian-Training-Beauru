@@ -3910,3 +3910,11 @@ a.loginhere-link:hover {
     margin:9px;
     border-radius: 0px;
 }
+
+.invalid-feedback{
+    display:block !important;
+}
+.socail-signup ul li a{
+    display: inline-block;
+    text-decoration: none;
+}

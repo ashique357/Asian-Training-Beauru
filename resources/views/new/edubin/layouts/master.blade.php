@@ -20,7 +20,7 @@
     @include('new.edubin.includes.publication')
     @include('new.edubin.includes.testimonial')
     @include('new.edubin.includes.news_blog')
-    @include('new.edubin.includes.partner')
+    <!-- @include('new.edubin.includes.partner') -->
     @include('new.edubin.includes.footer')
     @include('new.edubin.includes.footer_link')
 </body>

@@ -24,36 +24,46 @@
    <div class="container">
       <div class="col-md-8 offset-md-2">
          <div class="signup-content">
-            <form method="POST" action=action="{{ route('register') }}" id="signup-form" class="signup-form">
+            <form method="POST" action="{{route('register') }}" id="signup-form" class="signup-form">
+            
             @csrf
             <h2 class="form-title pb-20">Create Account</h2>
             <div class="form-group">
-               <input type="text" class="form-input" placeholder="Username" name="name" id="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+               <input type="text" class="form-input @error('name') is-invalid @enderror" placeholder="Username" name="name" id="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                @error('name')
-               <span class="invalid-feedback" role="alert">
+               <span class="invalid-feedback" style="display:block !important" role="alert">
                <strong>{{ $message }}</strong>
                </span>
                @enderror
+              
             </div>
             <div class="form-group">
-               <input type="email" class="form-input" name="email" placeholder="E-mail" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+               <input type="email" class="form-input @error('email') is-invalid @enderror" name="email" placeholder="E-mail" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                @error('email')
-               <span class="invalid-feedback" role="alert">
+               <span class="invalid-feedback" style="display:block !important" role="alert">
                <strong>{{ $message }}</strong>
                </span>
                @enderror
+
             </div>
             <div class="form-group">
-               <input type="password" class="form-input" name="password" id="password" placeholder="Password"  required autocomplete="current-password">
+               <input type="password" class="form-input @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password"  required autocomplete="current-password">
                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                @error('password')
-               <span class="invalid-feedback" role="alert">
+               <span class="invalid-feedback" style="display:block !important" role="alert">
                <strong>{{ $message }}</strong>
                </span>
                @enderror
+               
             </div>
             <div class="form-group">
-               <input type="password" class="form-input" name="password_confirmation" required autocomplete="new-password" id="re_password" placeholder="Repeat your password">
+               <input type="password" class="form-input @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required  id="re_password" placeholder="Repeat your password">
+               @error('password_confirmation')
+               <span class="invalid-feedback" style="display:block !important" role="alert">
+               <strong>{{ $message }}</strong>
+               </span>
+               @enderror
+         
             </div>
             <div class="form-group">
                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
@@ -62,13 +72,13 @@
             <div class="form-group">
                <input type="submit" name="submit" id="submit" class="main-btn register-submit" value="Sign up">
             </div>
-            </form>
             <span class="span-social">or try our socials</span>
             <ul class=>
-               <li><a href="{{ url('login/facebook') }}""><i class="wmicon-social5"></i> Facebook</a></li>
+               <li><a href="{{ url('login/facebook') }}""><i class="fa fa-facebook"></i> Facebook</a></li>
                <!-- <li class="wm-twitter-color"><a href="{{ url('login/twitter') }}""><i class="wmicon-social4"></i> twitter</a></li> -->
                <li><a href="{{ url('login/google') }}""><i class="fa fa-google"></i> Google</a></li>
             </ul>
+            </form>
          </div>
       </div>
    </div>

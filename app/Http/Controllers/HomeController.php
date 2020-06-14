@@ -51,4 +51,7 @@ class HomeController extends Controller
     public function wayOfMember(){
         return view('User.Pages.membershipWay');
     }
+    public function welcome(){
+        return view('welcome');
+    }
 }

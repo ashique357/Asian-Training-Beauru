@@ -4,19 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/1', function () {
-    return view('email.membership');
-});
-
-
-
 Auth::routes(['verify' => true]);
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/president-message', 'HomeController@president');
 Route::get('/our-team', 'HomeController@team');
@@ -26,8 +16,8 @@ Route::get('/way-to-become-a-member', 'HomeController@wayOfMember');
 Route::get('/benefit-of-membership', 'HomeController@benefitMember');
 
 
-Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
-Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallback');
+Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('/login/{provider}/callback','Auth\LoginController@handleProviderCallback');
 
 // Admin routes
 Route::get('/admin/dashboard','AdminController@index');
@@ -50,11 +40,11 @@ Route::post('/banner','AdminController@banner');
 // Route::post('/admin/course-update/{id}','CourseController@update');
 // Route::post('/admin/course-delete/{id}','CourseController@delete');
 
-Route::get('admin/about-us','AdminController@about_index');
-Route::post('admin/about-us','AdminController@storeIndex');
+Route::get('/admin/about-us','AdminController@about_index');
+Route::post('/admin/about-us','AdminController@storeIndex');
 
-Route::get('admin/president-message','AdminController@pmIndex');
-Route::post('admin/president-message','AdminController@pmStore');
+Route::get('/admin/president-message','AdminController@pmIndex');
+Route::post('/admin/president-message','AdminController@pmStore');
 
 Route::get('/admin/team','TeamController@index');
 Route::get('/admin/team-create','TeamController@create');
@@ -83,11 +73,5 @@ Route::post('/member-verify','MemberController@searchResult');
 //opportunity
 Route::get('/opportunity','OpportunityController@index');
 
-
-//new
-
-Route::get('/1', function () {
-    return view('new.edubin.layouts.master');
-});
 
 

@@ -41,6 +41,8 @@
                                    <ul>
                                        <li><a href="#">Benefit Of Membership</a></li>
                                        <li><a href="/way-to-become-a-member">How To Become A Member</a></li>
+                                       <li><a href="/member/registration">Apply For Membership</a></li>
+                                       <li><a href="">Verify Member</a></li>
                                    </ul>
                                </div>
                            </div> <!-- categories -->
