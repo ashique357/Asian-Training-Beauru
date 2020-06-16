@@ -1,4 +1,4 @@
-<html lang="en">
+<!DOCTYPE html>
 <head>
     @include('new.edubin.includes.header')
 </head>
@@ -14,3 +14,4 @@
     @include('new.edubin.includes.footer_link')
 </body>
 </html>
+

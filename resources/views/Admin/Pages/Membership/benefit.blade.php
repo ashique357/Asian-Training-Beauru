@@ -33,7 +33,7 @@
 						</button>
 					</div>
 				</div>
-				@include('flash')
+
 				<!-- /.card-header -->
 				<form action="/admin/benefit-of-membership" method="POST" enctype="multipart/form-data">
 				@csrf

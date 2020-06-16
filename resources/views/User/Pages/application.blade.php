@@ -23,7 +23,7 @@
 <section class="signup pt-105 pb-120 gray-bg" id="block">
    <div class="container">
       <div class="col-md-12">
-      @include('flash')
+       @include('flash')
          <div class="signup-content" >
             <form method="POST" id="signup-form" class="signup-form" action="/member/registration" enctype="multipart/form-data">
                @csrf
@@ -35,11 +35,6 @@
                         <option value="2">Training Provider</option>
                         <option value="3">Corporate</option>
                      </select>
-                     @error('country')
-                     <span class="invalid-feedback" role="alert">
-                     <strong>{{ $message }}</strong>
-                     </span>
-                     @enderror
                </div>
 
                <div id="individual" hidden>

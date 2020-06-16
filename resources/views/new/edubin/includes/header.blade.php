@@ -41,6 +41,7 @@
     
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{{asset('new/css/responsive.css')}}">
-  
-  
+
+    <!-- include libraries(jQuery, bootstrap) -->
+    
 </head>

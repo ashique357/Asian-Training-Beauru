@@ -31,7 +31,7 @@ class TeamController extends Controller
                 return redirect('/');
             }
             }
-        });
+        })->except(['team','teamMember']);
     }
 
     public function index(){
@@ -92,5 +92,14 @@ class TeamController extends Controller
         $team=Team::where('id',$id)->first();
         $team->delete();
         return redirect()->back()->with('success', 'You have successfully deleted a team member');
+    }
+
+    public function team(){
+        return view('User.Pages.team');
+    }
+    
+    public function teamMember($id){
+        $team=Team::where('id',$id)->first();
+        return view('User.Pages.teamMember')->with('team',$team);
     }
 }

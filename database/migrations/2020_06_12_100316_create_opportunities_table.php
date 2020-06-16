@@ -15,7 +15,8 @@ class CreateOpportunitiesTable extends Migration
     {
         Schema::create('opportunities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('member_id')->default('11');
+            $table->foreignId('member_id')->nullable()->unsigned();
+            $table->integer('post_type');
             $table->string('org_name')->nullable();
             $table->string('country');
             $table->longText('assignment_details')->nullable();
@@ -24,6 +25,7 @@ class CreateOpportunitiesTable extends Migration
             $table->string('fees')->nullable();
             $table->string('position')->nullable();
             $table->string('location')->nullable();
+            $table->boolean('active')->default('0');
             $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
             $table->timestamps();
         });

@@ -24,4 +24,8 @@ class Member extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function opportunities(){
+        return $this->hasMany('App\Opportunity');
+    }
+
 }

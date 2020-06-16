@@ -16,12 +16,12 @@ use App\Traits\EmailTrait;
 use App\Member;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MembershipMail;
+use App\Opportunity;
 
 class AdminController extends Controller
 {   use ImageTrait,RichTextTrait,EmailTrait;
     public function __construct()
     {
-        
         $this->middleware(function ($request, $next) {
             $this->user= Auth::check();
             if($this->user==false){
@@ -267,7 +267,7 @@ class AdminController extends Controller
             $image=$this->imageUpload($request,$image_field,'/uploads/images',$h,$w);
             $m->membership_image=$image;
             $m->save();
-            dd($id);     return redirect()->back()->with('success', 'You have successfully saved way to become member content');
+         return redirect()->back()->with('success', 'You have successfully saved way to become member content');
         }
     }
     public function benefit(){
@@ -363,6 +363,32 @@ class AdminController extends Controller
         $b->save();
         $member->save();
         return redirect()->back()->with('success', "Membership Request Declined for $member->email");
+    }
+
+    public function opportunity_list(){
+        $opportunity=Opportunity::latest()->paginate(10);
+        return view('Admin.Pages.Opportunity.index')->with(['opportunity'=>$opportunity]);
+    }
+
+    public function opportunity_accept($id){
+        $op=Opportunity::find($id);
+        $op->active=1;
+        $op->save();
+        return redirect()->back()->with('success', "Opportunity Request Accepted for $op->org_name");
+    }
+
+    public function opportunity_declined($id){
+        $op=Opportunity::find($id);
+        $op->active=0;
+        $op->save();
+        return redirect()->back()->with('success', "Opportunity Request declined for $op->org_name");
+    }
+
+    public function opportunity_info($id){
+        $op=Opportunity::find($id);
+        $country=$op->country;
+        $c=DB::table('countries')->where('id',$country)->first('name');
+        return view('Admin.Pages.Opportunity.show')->with(['op'=>$op,'c'=>$c]);
     }
 
 }

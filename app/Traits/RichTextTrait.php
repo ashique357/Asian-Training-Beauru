@@ -12,7 +12,8 @@ trait RichTextTrait {
         $dom = new \DomDocument();
         libxml_use_internal_errors(true);
         $url="http://www.w3.org/TR/REC-html40/loose.dtd";
-        $dom->loadHTML($detail);
+        $dom->loadHTML($detail[]);
+        
         $images = $dom->getElementsByTagName('img');
         foreach($images as $k => $img){
             $data = $img->getAttribute('src');

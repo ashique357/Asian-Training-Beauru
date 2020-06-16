@@ -3918,3 +3918,9 @@ a.loginhere-link:hover {
     display: inline-block;
     text-decoration: none;
 }
+
+.margin-gap{
+    margin-top:30px;
+}
+
+#more  {display:  none;}

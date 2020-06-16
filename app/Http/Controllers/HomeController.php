@@ -35,14 +35,14 @@ class HomeController extends Controller
         return view('User.Pages.president');
     }
 
-    public function team(){
-        return view('User.Pages.team');
-    }
+    // public function team(){
+    //     return view('User.Pages.team');
+    // }
     
-    public function teamMember($id){
-        $team=Team::where('id',$id)->first();
-        return view('User.Pages.teamMember')->with('team',$team);
-    }
+    // public function teamMember($id){
+    //     $team=Team::where('id',$id)->first();
+    //     return view('User.Pages.teamMember')->with('team',$team);
+    // }
 
     public function benefitMember(){
         return view('User.Pages.benefitOfMembership');

@@ -14,3 +14,7 @@
 
 table.fixed { table-layout:fixed; }
 table.fixed td { overflow: hidden; }
+
+.invalid-feedback{
+  display: block;
+}

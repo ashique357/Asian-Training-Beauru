@@ -14,7 +14,7 @@
                <p>Open/Close: {{$data['time']}}</p>
             </div>
          </div>
-         <div class="col-lg-4">
+         <div class="col-lg-4 text-right">
             <div class="login-register">
                <ul>
                   @guest

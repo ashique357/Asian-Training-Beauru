@@ -37,9 +37,10 @@
                                     <li class="nav-item">
                                         <a href="">Opportunities<button class="sub-nav-toggler"> <i class="fa fa-chevron-down"></i> </button></a>
                                         <ul class="sub-menu">
-                                            <li><a href="">Job</a></li>
-                                            <li><a href="">Training</a></li>
-                                            <li><a href="">Consultation</a></li>
+                                            <li><a href="/opportunity/trainings">Training</a></li>
+                                            <li><a href="/opportunity/jobs">Job</a></li>
+                                            <li><a href="/opportunity/consultations">Consultation</a></li>
+                                            <li><a href="/member/opportunity">Post opportunity</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">

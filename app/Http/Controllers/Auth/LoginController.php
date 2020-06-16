@@ -33,16 +33,16 @@ class LoginController extends Controller
      * @var string
      */
     
-    // protected $redirectTo = '/';
-    protected function redirectTo(){
-        $role = Auth::user()->role;
-        if($role==1){
-            return redirect('/admin/dashboard');
-        }
-        elseif($role ==0){
-            return route('welcome');
-        }
-    }
+    protected $redirectTo = '/';
+    // protected function redirectTo(){
+    //     $role = Auth::user()->role;
+    //     if($role==1){
+    //         return redirect('/admin/dashboard');
+    //     }
+    //     elseif($role ==0){
+    //         return route('welcome');
+    //     }
+    // }
     
     /**
      * Create a new controller instance.
@@ -68,7 +68,7 @@ class LoginController extends Controller
        
        $authUser = $this->checkUser($user, $provider);
        Auth::login($authUser, true);
-       return $this->redirectTo();
+       return redirect($this->redirectTo);
     }
     public function checkUser($providerUser, $provider)
     {
