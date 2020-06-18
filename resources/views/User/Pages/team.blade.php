@@ -29,17 +29,17 @@
             <div class="singel-teachers mt-30 text-center">
                <div class="image">
                   @if($team->image)
-                  <a href="/our-team/{{$team->id}}">
+                  <a href="/our-team/{{$team->name}}">
                   <img src="/uploads/images/{{$team->image}}" alt="" style="width:250px;height:250px;">
                   </a>
                   @else
-                  <a href="/our-team/{{$team->id}}">
+                  <a href="/our-team/{{$team->name}}">
                   <img src="/images/avatar.jpg" alt="">
                   </a>
                   @endif
                </div>
                <div class="cont">
-                  <a href="/our-team/{{$team->id}}">
+                  <a href="/our-team/{{$team->name}}">
                      <h6>{{$team->name}}</h6>
                   </a>
                   <span>{{$team->role}}</span>

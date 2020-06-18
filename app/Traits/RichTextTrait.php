@@ -8,11 +8,12 @@ use Image;
   
 trait RichTextTrait {
     public function richText(Request $request,$filedName){
-        $detail=$request->input($filedName);
+        if($request->input($filedName) !=null){
+            $detail=$request->input($filedName);
         $dom = new \DomDocument();
         libxml_use_internal_errors(true);
         $url="http://www.w3.org/TR/REC-html40/loose.dtd";
-        $dom->loadHTML($detail[]);
+        $dom->loadHTML($detail);
         
         $images = $dom->getElementsByTagName('img');
         foreach($images as $k => $img){
@@ -28,6 +29,11 @@ trait RichTextTrait {
         }
         $detail = $dom->saveHTML();
         return $detail;
+        }
+        else{
+            $detail=null;
+            return $detail;
+        }
     }
 
 }

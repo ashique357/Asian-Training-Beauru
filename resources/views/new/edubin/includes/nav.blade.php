@@ -64,9 +64,9 @@
                                     <li class="nav-item">
                                         <a href="">Resources<button class="sub-nav-toggler"> <i class="fa fa-chevron-down"></i> </button></a>
                                         <ul class="sub-menu">
-                                            <li><a href="">Books/eBooks</a></li>
-                                            <li><a href="">Materials</a></li>
-                                            <li><a href="">Tools</a></li>
+                                            <li><a href="/resources/books">Books/eBooks</a></li>
+                                            <li><a href="/resources/materials">Materials</a></li>
+                                            <li><a href="/resources/tools">Tools</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">

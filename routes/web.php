@@ -87,3 +87,17 @@ Route::get('/admin/opportunity-request','AdminController@opportunity_list');
 Route::get('/admin/opportunity-request/{id}','AdminController@opportunity_info');
 Route::post('/admin/opportunity-request/{id}/accept','AdminController@opportunity_accept');
 Route::post('/admin/opportunity-request/{id}/decline','AdminController@opportunity_declined');
+
+Route::get('/admin/resource','ProductController@index');
+Route::get('/admin/resource/{id}','ProductController@info');
+Route::get('/admin/resource/create','ProductController@create');
+Route::post('/admin/resource/create','ProductController@store');
+Route::get('/admin/resource/edit/{id}','ProductController@edit');
+Route::post('/admin/resource/edit/{id}','ProductController@update');
+
+
+
+Route::get('/resources/books','ProductController@book');
+Route::get('/resources/materials','ProductController@material');
+Route::get('/resources/tools','ProductController@tool');
+Route::get('/resources/{name}','ProductController@show');

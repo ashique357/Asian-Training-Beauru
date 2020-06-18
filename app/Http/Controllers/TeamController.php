@@ -98,8 +98,8 @@ class TeamController extends Controller
         return view('User.Pages.team');
     }
     
-    public function teamMember($id){
-        $team=Team::where('id',$id)->first();
+    public function teamMember($name){
+        $team=Team::where('name',$name)->firstOrFail();
         return view('User.Pages.teamMember')->with('team',$team);
     }
 }
