@@ -27,7 +27,7 @@
 				<div class="card-header">
 					@if($product->product_type==1)
                     <h3 class="card-title">Books/eBooks</h3>
-                    @elseif($product->product_type==1)
+                    @elseif($product->product_type==2)
                     <h3 class="card-title">Materials</h3>
                     @else
                     <h3 class="card-title">Tools</h3>

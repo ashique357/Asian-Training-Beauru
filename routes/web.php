@@ -31,13 +31,6 @@ Route::post('/top-nav','AdminController@topNav');
 Route::post('/banner','AdminController@banner');
 // Route::post('/course','AdminController@course');
 
-//courses
-// Route::get('/admin/courses','CourseController@index');
-// Route::get('/admin/course-create','CourseController@create');
-// Route::post('/admin/course-create','CourseController@store');
-// Route::get('/admin/course-update/{id}','CourseController@edit');
-// Route::post('/admin/course-update/{id}','CourseController@update');
-// Route::post('/admin/course-delete/{id}','CourseController@delete');
 
 Route::get('/admin/about-us','AdminController@about_index');
 Route::post('/admin/about-us','AdminController@storeIndex');
@@ -101,3 +94,14 @@ Route::get('/resources/books','ProductController@book');
 Route::get('/resources/materials','ProductController@material');
 Route::get('/resources/tools','ProductController@tool');
 Route::get('/resources/{name}','ProductController@show');
+
+Route::get('/admin/event','EventController@index');
+Route::get('/admin/event/create','EventController@create');
+Route::post('/admin/event/create','EventController@store');
+Route::get('/admin/event/edit/{id}','EventController@edit');
+Route::post('/admin/event/edit/{id}','EventController@update');
+Route::get('/admin/event/{id}','EventController@show');
+
+Route::get('/event/congress','EventController@seminar_index');
+Route::get('/event/networking','EventController@networking_index');
+Route::get('/event/{slug}','EventController@eventShow');

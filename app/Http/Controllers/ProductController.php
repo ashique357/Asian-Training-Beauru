@@ -95,7 +95,7 @@ class ProductController extends Controller
     }
 
     public function edit($id){
-        $product=Product::find($id);
+        $product=Product::findOrFail($id);
         if($product->product_type==1){
             return view('Admin.Pages.Product.editBook')->with(['product'=>$product]);
         }
@@ -108,7 +108,7 @@ class ProductController extends Controller
     }
 
     public function update(Request $request,$id){
-        $product=Product::find($id)->first();
+        $product=Product::find($id)->firstOrFail();
         $a=$product->product_type=$request->product_type;
         if($a==1){
             $product->name=$request->name;
