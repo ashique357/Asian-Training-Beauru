@@ -73,6 +73,7 @@ route::post('/member/opportunity','OpportunityController@store');
 Route::get('/opportunity/trainings','OpportunityController@training');
 Route::get('/opportunity/jobs','OpportunityController@job');
 Route::get('/opportunity/consultations','OpportunityController@cons');
+Route::get('/opportunity/{id}','OpportunityController@showIndex');
 
 Route::get('/admin/opportunity','OpportunityController@form');
 Route::post('/admin/opportunity','OpportunityController@storeForm');

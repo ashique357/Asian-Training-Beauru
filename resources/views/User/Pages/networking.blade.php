@@ -49,5 +49,5 @@
                </div>
            </div>
         </div> <!-- container -->
-    </section>
+</section>
 @endsection

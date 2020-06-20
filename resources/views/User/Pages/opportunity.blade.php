@@ -58,6 +58,17 @@
                      </span>
                      @enderror
                   </div>
+                  
+                  <div class="form-group">
+                  <label for="">Upload your title photo</label>
+                     <input type="file" class="form-input" name="image1" placeholder="Upload your title photo">
+                     @error('image')
+                     <span class="invalid-feedback" role="alert">
+                     <strong>{{ $message }}</strong>
+                     </span>
+                     @enderror
+                  </div>
+
                   <div class="form-group">
                      <textarea name="assignment_details[]"  class="form-input" id="" cols="30" rows="10" placeholder="Write details about your assignment" autofocus></textarea>
                      @error('assignment_details')
@@ -109,6 +120,15 @@
                         @endforeach
                      </select>
                      @error('country')
+                     <span class="invalid-feedback" role="alert">
+                     <strong>{{ $message }}</strong>
+                     </span>
+                     @enderror
+                  </div>
+                  <div class="form-group">
+                  <label for="">Upload your title photo</label>
+                     <input type="file" class="form-input" name="image2" placeholder="Upload your title photo">
+                     @error('image')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
@@ -181,6 +201,15 @@
                         @endforeach
                      </select>
                      @error('country')
+                     <span class="invalid-feedback" role="alert">
+                     <strong>{{ $message }}</strong>
+                     </span>
+                     @enderror
+                  </div>
+                  <div class="form-group">
+                  <label for="">Upload your title photo</label>
+                     <input type="file" class="form-input" name="image3" placeholder="Upload your title photo">
+                     @error('image')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>

@@ -37,7 +37,7 @@
             <div class="card-body">
                <div class="row">
                   <div class="col-md-12">
-                     <form method="POST" id="signup-form"  action="/admin/opportunity">
+                     <form method="POST" id="signup-form"  action="/admin/opportunity" enctype="multipart/form-data">
                         @csrf
                         <h2 class="form-title pb-20">Post Opportunity</h2>
                         <div class="form-group">
@@ -70,6 +70,17 @@
                               </span>
                               @enderror
                            </div>
+                           <div class="form-group">
+                              <label for="exampleInputFile">Upload Image</label>
+                              <div class="input-group">
+                                 <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image1" id="">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose Image</label>
+                                 </div>
+                              </div>
+                              <p><span style="color: grey">The image size will be 722 X 404 pixels</span>
+                              </p>
+								   </div>
                            <div class="form-group">
                            <textarea class="form-control" cols="30" rows="10" name="assignment_details[0]"></textarea>
                               @error('assignment_details')
@@ -126,6 +137,18 @@
                               </span>
                               @enderror
                            </div>
+                           <div class="form-group">
+                              <label for="exampleInputFile">Upload Image</label>
+                              <div class="input-group">
+                                 <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image2" id="">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose Image</label>
+                                 </div>
+                              </div>
+                              <p><span style="color: grey">The image size will be 722 X 404 pixels</span>
+                              </p>
+								   </div>
+                           
                            <div class="form-group">
                               <input type="text" class="form-control" name="position"  placeholder="Job Position" autofocus>
                               @error('position')
@@ -199,6 +222,17 @@
                               @enderror
                            </div>
                            <div class="form-group">
+                              <label for="exampleInputFile">Upload Image</label>
+                              <div class="input-group">
+                                 <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image3" id="">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose Image</label>
+                                 </div>
+                              </div>
+                              <p><span style="color: grey">The image size will be 722 X 404 pixels</span>
+                              </p>
+								   </div>
+                           <div class="form-group">
                               
                            <textarea class="form-control" cols="30" rows="10" name="assignment_details[2]" placeholder="Write details about your consultation's assignment description" autofocus></textarea>
                               @error('assignment_details')
@@ -207,6 +241,7 @@
                               </span>
                               @enderror
                            </div>
+                          
                            <div class="form-group">
                               
                            <textarea class="form-control" cols="30" rows="10" name="requirements[2]" placeholder="Write details about your requirements" autofocus></textarea>

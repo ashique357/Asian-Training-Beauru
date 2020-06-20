@@ -18,6 +18,7 @@ class CreateOpportunitiesTable extends Migration
             $table->foreignId('member_id')->nullable()->unsigned();
             $table->integer('post_type');
             $table->string('org_name')->nullable();
+            $table->string('image')->nullable();
             $table->string('country');
             $table->longText('assignment_details')->nullable();
             $table->longText('requirements')->nullable();

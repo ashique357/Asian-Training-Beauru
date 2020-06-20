@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Opportunity extends Model
 {
     protected $fillabel=[
-        'org_name','country','assignment_details','requirements','approx','fees','position','location','post_type'
+        'org_name','country','assignment_details','requirements','approx','fees','position','image','location','post_type'
     ];
 
     protected $hidden=['member_id','active'];

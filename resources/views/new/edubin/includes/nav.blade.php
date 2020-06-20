@@ -46,8 +46,8 @@
                                     <li class="nav-item">
                                         <a href="">Training/Events<button class="sub-nav-toggler"> <i class="fa fa-chevron-down"></i> </button></a>
                                         <ul class="sub-menu">
-                                            <li><a href="">Seminar/Congress</a></li>
-											<li><a href="">Networking</a></li>
+                                            <li><a href="/event/congress">Seminar/Congress</a></li>
+											<li><a href="/event/networking">Networking</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">

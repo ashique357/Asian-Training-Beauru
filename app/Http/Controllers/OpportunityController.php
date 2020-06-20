@@ -33,9 +33,9 @@ class OpportunityController extends Controller
                     return redirect('/member/registration');
                 }
            }
-        })->except(['training','job','cons']);
+        })->except(['training','job','cons','showIndex']);
     }
-    
+     
     public function index(){
         $countries=DB::table('countries')->get();
         return view('User.Pages.opportunity')->with('countries',$countries);
@@ -56,6 +56,11 @@ class OpportunityController extends Controller
             $p->requirements=$request->requirements[0];
             $p->approx=$request->approx[0];
             $p->fees=$request->fees[0];
+            $image_field='image1';
+            $h=722;
+            $w=404;
+            $image=$this->imageUpload($request,$image_field,'/opportunity',$h,$w);
+            $p->image=$image;
             
         }
 
@@ -69,6 +74,11 @@ class OpportunityController extends Controller
             $p->fees=$request->fees[1];
             $p->position=$request->position;
             $p->location=$request->location;
+            $image_field='image2';
+            $h=722;
+            $w=404;
+            $image=$this->imageUpload($request,$image_field,'/opportunity',$h,$w);
+            $p->image=$image;
         }
 
         if($val ==3){
@@ -79,6 +89,11 @@ class OpportunityController extends Controller
             $p->requirements=$request->requirements[2];
             $p->approx=$request->approx[2];
             $p->fees=$request->fees[2];
+            $image_field='image3';
+            $h=722;
+            $w=404;
+            $image=$this->imageUpload($request,$image_field,'/opportunity',$h,$w);
+            $p->image=$image;
         }
         $p->save();
         return redirect()->back()->with('success', 'Congratulation!!!
@@ -95,7 +110,7 @@ class OpportunityController extends Controller
         return view('User.Pages.jobs')->with(['jobs'=>$jobs]);
     }
     public function cons(){
-        $cons=Opportunity::find(1,'id')->first();
+        $cons=Opportunity::find(1,'id')->firstOrFail();
         $cons=Opportunity::where('active',1)->where('post_type',3)->latest()->paginate(3);
         return view('User.Pages.consultations')->with(['cons'=>$cons]);
     }
@@ -119,6 +134,11 @@ class OpportunityController extends Controller
             $p->requirements=$request->requirements[0];
             $p->approx=$request->approx[0];
             $p->fees=$request->fees[0];
+            $image_field='image1';
+            $h=722;
+            $w=404;
+            $image=$this->imageUpload($request,$image_field,'/opportunity',$h,$w);
+            $p->image=$image;
             
         }
 
@@ -132,6 +152,11 @@ class OpportunityController extends Controller
             $p->fees=$request->fees[1];
             $p->position=$request->position;
             $p->location=$request->location;
+            $image_field='image2';
+            $h=722;
+            $w=404;
+            $image=$this->imageUpload($request,$image_field,'/opportunity',$h,$w);
+            $p->image=$image;
         }
 
         if($val ==3){
@@ -142,9 +167,20 @@ class OpportunityController extends Controller
             $p->requirements=$request->requirements[2];
             $p->approx=$request->approx[2];
             $p->fees=$request->fees[2];
+            $image_field='image3';
+            $h=722;
+            $w=404;
+            $image=$this->imageUpload($request,$image_field,'/opportunity',$h,$w);
+            $p->image=$image;
         }
         $p->save();
         return redirect()->back()->with('success', 'Congratulation!!!
-        You have successfully made a post.Wait for the approval');
+        You have successfully made a post');
+    }
+
+    public function showIndex($id){
+        $opportunity=Opportunity::where('id',$id)->firstOrFail();
+        return view('User.Pages.opportunityIndex')->with(['opportunity'=>$opportunity]);
     }
 }
+

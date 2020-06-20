@@ -59,7 +59,7 @@
                                             <h6><strong class="heading">Country name:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$c->name}}</p>
+                                            <p class="text-details">{{$op->country}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -122,7 +122,7 @@
                                             <h6><strong class="heading">Country name:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$c->name}}</p>
+                                            <p class="text-details">{{$op->country}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -202,7 +202,7 @@
                                             <h6><strong class="heading">Country name:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$c->name}}</p>
+                                            <p class="text-details">{{$op->country}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
