@@ -42,7 +42,7 @@ class MemberController extends Controller
         $image_field='photo';
         $h=150;
         $w=150;
-        $image=$this->imageUpload($request,$image_field,'/uploads/images',$h,$w);
+        $image=$this->imageUpload($request,$image_field,'/member',$h,$w);
         $m->photo=$image;
         //provider
         $m->tp_name=$request->tp_name;
@@ -77,8 +77,9 @@ class MemberController extends Controller
 
     public function searchResult(Request $request){
         $search=$request->search;
-        // $members=Member::where('name','LIKE','%'.$search.'%')->orWhere('reg_id','LIKE','%'.$search.'%')->get();
-        // return response()->json($members);
+        $members=Member::where('name','LIKE','%'.$search.'%')->orWhere('reg_id','LIKE','%'.$search.'%')->get();
+        return view('User.Pages.searchResult')->with(['members'=>$members]);
+      
     }
 
 }

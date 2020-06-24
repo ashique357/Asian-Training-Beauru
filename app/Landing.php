@@ -20,7 +20,10 @@ class Landing extends Model
         'about_image','about_content','about_president_image','about_saying',
         
         //membership section
-        'membership_image','membership_benefit','membership_way'
+        'membership_image','membership_benefit','membership_way',
+
+        //Certification
+        'certification_benefit','way_to_certified'
     ];
     public $timestamps = false;
 

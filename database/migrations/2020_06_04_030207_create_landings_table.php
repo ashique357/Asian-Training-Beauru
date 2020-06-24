@@ -57,6 +57,10 @@ class CreateLandingsTable extends Migration
             $table->string('membership_image')->nullable();
             $table->longtext('membership_benefit')->nullable();
             $table->longtext('membership_way')->nullable();
+
+            //certification
+            $table->longText('certification_benefit')->nullable();
+            $table->longText('way_to_certified')->nullable();
             
         });
     }

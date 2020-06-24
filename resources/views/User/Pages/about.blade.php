@@ -55,6 +55,6 @@
                </div>
            </div> <!-- row -->
         </div> <!-- container -->
-    </section>
+</section>
 
 @endsection

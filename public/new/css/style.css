@@ -3845,7 +3845,7 @@ p.form-message.error {
     color: #07294d;
 }
 .main-btn.register-submit {
-    width: 170px;
+    width: 125px;
 }
 .label-agree-term {
     font-size: 15px;
@@ -3951,10 +3951,11 @@ a.loginhere-link:hover {
     color: #ffc600;
     right: 10px;
     position: absolute;
-    margin-top: 30px;
-    margin-right:-60px; 
-    transform: rotate(270deg); 
+    margin-top: 0px;
+    margin-right:-10px; 
+    transform: rotate(0deg); 
     border-radius:5%;
+    font-weight: 900;
 }
 
 .semi-two{
@@ -4016,3 +4017,16 @@ a.loginhere-link:hover {
   .details h6{
       margin-bottom: -10px;
   }
+
+ 
+
+  /* table */
+  table.fixed { table-layout:fixed;
+    width: 100%;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  table.fixed td { overflow: hidden; }
+
+ 

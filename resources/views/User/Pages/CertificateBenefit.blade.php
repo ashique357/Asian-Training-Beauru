@@ -1,15 +1,15 @@
 @extends('new.edubin.partials.main') 
 @section('content')
-<section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url(new/images/page-banner-1.jpg)">
+<section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8">
    <div class="container">
       <div class="row">
          <div class="col-lg-12">
             <div class="page-banner-cont">
-               <h2>Verify Membership</h2>
+               <h2>Benefit Of Certification</h2>
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="/">Home</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Verify Membership</li>
+                     <li class="breadcrumb-item active" aria-current="page">Benefit Of Certification</li>
                   </ol>
                </nav>
             </div>
@@ -27,13 +27,7 @@
               <div class="col-lg-8">
                   <div class="blog-details mt-30">
                       <div class="cont">
-                        <form action="/member-verify" method="Post" @submit.prevent="find">
-                           @csrf
-                           <input type="text" class="form-input" name="search" v-model="search" placeholder="Keyword:Search for Name/Registration number" required>                      
-                           <div class="form-group" style="margin-top:10px";>
-                              <button type=submit class="main-btn register-submit" @click="find">Search</button>
-                           </div>
-                        </form>
+                      {!! $data['certification_benefit']!!}
                       </div> <!-- cont -->
                   </div> <!-- blog details -->
               </div>
@@ -45,10 +39,12 @@
                                <div class="categories mt-30">
                                    <h4>Quick Links</h4>
                                    <ul>
-                                   <li><a href="/benefit-of-membership">Benefit Of Membership</a></li>
-                                       <li><a href="#">How To Become A Member</a></li>
-                                       <li><a href="/member/registration">Apply For Membership</a></li>
-                                       <li><a href="">Verify Member</a></li>
+                                   <li><a href="/certification-benefit">Benefit Of Certification</a></li>
+                                    <li><a href="/way-to-become-certified">Way To Become Certified</a></li>
+                                    <li><a href="/certificate-list">List Of Certification</a></li>
+                                    <li><a href="/certificate-apply">Apply For Certification</a></li>
+                                    <li><a href="/certificate-verify">Verification Of Certified</a></li>
+                                       
                                    </ul>
                                </div>
                            </div> <!-- categories -->
@@ -58,5 +54,6 @@
                </div>
            </div> <!-- row -->
         </div> <!-- container -->
-</section>
+    </section>
+
 @endsection

@@ -505,8 +505,9 @@ class ComposerStaticInit5775a8e10b930e084f83e7db48e57bbc
     );
 
     public static $classMap = array (
+        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Certificate' => __DIR__ . '/../..' . '/app/Certificate.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -516,8 +517,10 @@ class ComposerStaticInit5775a8e10b930e084f83e7db48e57bbc
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
+        'App\\Http\\Controllers\\CertificateController' => __DIR__ . '/../..' . '/app/Http/Controllers/CertificateController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\CourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/CourseController.php',
+        'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemberController.php',
         'App\\Http\\Controllers\\OpportunityController' => __DIR__ . '/../..' . '/app/Http/Controllers/OpportunityController.php',
@@ -533,7 +536,6 @@ class ComposerStaticInit5775a8e10b930e084f83e7db48e57bbc
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Banner' => __DIR__ . '/../..' . '/app/Http/Requests/Banner.php',
-        'App\\Http\\Requests\\Course' => __DIR__ . '/../..' . '/app/Http/Requests/Course.php',
         'App\\Http\\Requests\\Opportunity' => __DIR__ . '/../..' . '/app/Http/Requests/Opportunity.php',
         'App\\Http\\Requests\\TopNav' => __DIR__ . '/../..' . '/app/Http/Requests/TopNav.php',
         'App\\Http\\Requests\\Trainer' => __DIR__ . '/../..' . '/app/Http/Requests/Trainer.php',

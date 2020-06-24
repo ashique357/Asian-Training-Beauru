@@ -31,7 +31,7 @@
                                             <li><a href="/benefit-of-membership">Membership Benefit</a></li>
                                             <li><a href="/way-to-become-a-member">How To Become A Member</a>
                                             <li><a href="/member/registration">Aplly For Membership</a>
-                                            <li><a href="#">Verify Member</a>
+                                            <li><a href="/member-verify">Verify Member</a>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -53,12 +53,11 @@
                                     <li class="nav-item">
                                         <a href="">Certification<button class="sub-nav-toggler"> <i class="fa fa-chevron-down"></i> </button></a>
                                         <ul class="sub-menu">
-                                            <li><a href="">Benefit Of Certification</a></li>
-                                            <li><a href="">How To Become Certified</a></li>
-                                            <li><a href="">List Of Certification</a></li>
-                                            <li><a href="">Apply For Certification</a></li>
-                                            <li><a href="">Benefit Of Certification</a></li>
-                                            <li><a href="">Verification Of Certified</a></li>
+                                            <li><a href="/certification-benefit">Benefit Of Certification</a></li>
+                                            <li><a href="/way-to-become-certified">Way To Become Certified</a></li>
+                                            <li><a href="/certificate-list">List Of Certification</a></li>
+                                            <li><a href="/certificate-apply">Apply For Certification</a></li>
+                                            <li><a href="certificate-verify">Verification Of Certified</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
