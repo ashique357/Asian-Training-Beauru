@@ -4,85 +4,75 @@
                 <div class="col-lg-6">
                     <div class="section-title pb-50">
                         <h5>Latest News</h5>
-                        <h2>From the news</h2>
+                        <h2>From the Opportunities</h2>
+                    </div> <!-- section title -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title pb-50">
+                        <h5>Latest News</h5>
+                        <h2>From the Events</h2>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="singel-news mt-30">
-                        <div class="news-thum pb-25">
-                            <img src="images/news/n-1.jpg" alt="News">
-                        </div>
-                        <div class="news-cont">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                <li><a href="#"> <span>By</span> Adam linn</a></li>
-                            </ul>
-                            <a href="blog-singel.html"><h3>Tips to grade high cgpa in university life</h3></a>
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt .</p>
-                        </div>
-                    </div> <!-- singel news -->
-                </div>
+
+            <!-- opportunities -->
+            
                 <div class="col-lg-6">
                     <div class="singel-news news-list">
+                    @foreach($opportunities as $op)
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="news-thum mt-30">
-                                    <img src="images/news/ns-1.jpg" alt="News">
+                                    <img src="/opportunity/{{$op['image']}}">
                                 </div>
                             </div>
                             <div class="col-sm-8">
                                 <div class="news-cont mt-30">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                        <li><a href="#"> <span>By</span> Adam linn</a></li>
+                                        <li><a href="/opportunity/{{$op['id']}}"><i class="fa fa-calendar"></i>{{$op['approx']}}</a></li>
+                                        @if($op['member_id']==null)
+                                        <span><i class="fa fa-user"></i> Posted by <i>Admin</i></span>
+                                        @elseif($op['member_id'] != null)
+                                        <span><i class="fa fa-user"></i> Posted by <i>{{$op['member']['name']}}</i></span>
+                                         @endif 
                                     </ul>
-                                    <a href="blog-singel.html"><h3>Intellectual communication</h3></a>
-                                    <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
-                                </div>
+                                    <a href="/opportunity/{{$op['id']}}"><h3>{{$op['org_name']}}</h3></a>
+                                   <p>{!!substr($op['assignment_details'],106,120)!!}</p>
+                                   </div>
                             </div>
                         </div> <!-- row -->
-                    </div> <!-- singel news -->
-                    <div class="singel-news news-list">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="news-thum mt-30">
-                                    <img src="images/news/ns-2.jpg" alt="News">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="news-cont mt-30">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                        <li><a href="#"> <span>By</span> Adam linn</a></li>
-                                    </ul>
-                                    <a href="blog-singel.html"><h3>Study makes you perfect</h3></a>
-                                    <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
-                                </div>
-                            </div>
-                        </div> <!-- row -->
-                    </div> <!-- singel news -->
-                    <div class="singel-news news-list">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="news-thum mt-30">
-                                    <img src="images/news/ns-3.jpg" alt="News">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="news-cont mt-30">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                        <li><a href="#"> <span>By</span> Adam linn</a></li>
-                                    </ul>
-                                    <a href="blog-singel.html"><h3>Technology edcution is now....</h3></a>
-                                    <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
-                                </div>
-                            </div>
-                        </div> <!-- row -->
+                        @endforeach
                     </div> <!-- singel news -->
                 </div>
+               
+                <!-- Events -->
+                <div class="col-lg-6">
+                    <div class="singel-news news-list">
+                    @foreach($events as $event)
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="news-thum mt-30">
+                                    <img src="/events/{{$event['image']}}">
+                                </div>
+                            </div>
+                            <?php $x=urldecode($event['title']); ?>
+                            <div class="col-sm-8">
+                                <div class="news-cont mt-30">
+                                    <ul>
+                                        <li><a href="/event/{{$x}}"><i class="fa fa-calendar"></i>{{$event['date']}}</a></li>
+                                        
+                                    </ul>
+                                    <a href="/event/{{$x}}"><h3>{{$event['title']}}</h3></a>
+                                    <p>{!!substr($event['purpose'],106,200)!!}</p>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                        @endforeach
+                    </div> <!-- singel news -->
+                    
+                </div>
+                
             </div> <!-- row -->
         </div> <!-- container -->
     </section>

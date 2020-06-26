@@ -11,10 +11,9 @@ class Landing extends Model
 
     protected $fillable=[
         'address','phone','email','time',//menu_id,
-        'banner_image','banner_title','banner_url','banner_paragraph','btn_name',
-        'course_title','course_url','faculty_title','faculty_url','faculty_paragraph',
+        'banner_image','banner_title','banner_paragraph',
         
-        'fb_url','twitt_url','f_para1','f_para2','f_para3',
+        'team_title','team_details','f_para1','f_para2','f_para3',
         
         //about section
         'about_image','about_content','about_president_image','about_saying',

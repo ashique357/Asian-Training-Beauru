@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Team;
+use App\Landing;
 use Intervention\Image\ImageManager;
 use Image;
 use App\Traits\ImageTrait;
@@ -36,7 +37,6 @@ class TeamController extends Controller
 
     public function index(){
         $teams=Team::paginate(6);
-        // dd($teams);
         return view('Admin.Pages.Team.index')->with(['teams'=>$teams]);
 
     }
@@ -95,11 +95,46 @@ class TeamController extends Controller
     }
 
     public function team(){
-        return view('User.Pages.team');
+        $teams=Team::latest()->paginate(6);
+        return view('User.Pages.team')->with('teams',$teams);
     }
     
     public function teamMember($name){
         $team=Team::where('name',$name)->firstOrFail();
         return view('User.Pages.teamMember')->with('team',$team);
+    }
+
+    public function selectForLanding(){
+        $teams=Team::all();
+        return view('Admin.Pages.Team.TeamLanding')->with('teams',$teams);
+    }
+    public function PostSelectForLanding(Request $request){
+        $landing=Landing::where('id',1)->first();
+        if($landing ==null){
+            $l=new Landing();
+            $l->team_title=$request->team_title;
+            $f='team_details';
+            $l->team_details=$this->richText($request,$f);
+            foreach($request->team as $q){
+                $t=Team::where('id',$q)->firstOrFail();
+                $t->active=1;
+                $t->save();
+            }
+            $l->save();
+            return redirect()->back()->with('success', 'You have successfully saved team content in landing page');
+        }
+        else{
+            $landing->team_title=$request->team_title;
+            $f='team_details';
+            $landing->team_details=$this->richText($request,$f);
+            foreach($request->team as $q){
+                $t=Team::where('id',$q)->firstOrFail();
+                $t->active=1;
+                $t->save();
+            }
+            $landing->save();
+            return redirect()->back()->with('success', 'You have successfully saved team content in landing page');
+
+        }
     }
 }

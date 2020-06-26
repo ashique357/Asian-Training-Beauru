@@ -24,7 +24,7 @@ trait ImageTrait {
     public function upload(Request $request,$fname,$toStorage){
         if($request->hasFile($fname)){   
             foreach($request->file($fname) as $file){
-                $name = time().'.'.$file->extension();
+                $name = mt_rand(100,2000).time().'.'.$file->extension();
                 $file->move(public_path().$toStorage, $name); 
                 $data[] = $name; 
             }

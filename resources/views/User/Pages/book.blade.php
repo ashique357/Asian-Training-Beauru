@@ -37,14 +37,15 @@
                         </div>
                         @endforeach
                      </div>
+                     <?php $x=urldecode($product->name); ?>
                      <div class="cont">
                         <div class="name">
-                           <a href="/resources/{{$product->name}}">
+                           <a href="/resources/{{$x}}">
                               <h6>{{$product->name}}</h6>
                            </a>
                         </div>
                         <div class="button text-right">
-                           <a href="/resources/{{$product->name}}" class="main-btn">Buy Now</a>
+                           <a href="/resources/{{$x}}" class="main-btn">Buy Now</a>
                         </div>
                      </div>
                   </div>

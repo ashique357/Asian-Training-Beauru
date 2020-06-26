@@ -37,7 +37,7 @@
             <div class="card-body">
                <div class="row">
                   <div class="col-md-12">
-                     <form method="POST" id="signup-form"  action="/admin/resource" enctype="multipart/form-data">
+                     <form method="POST" id="signup-form"  action="/admin/resource-create" enctype="multipart/form-data">
                         @csrf
                         <h2 class="form-title pb-20">Create Resources</h2>
                         <div class="form-group">

@@ -11,7 +11,7 @@ class TeamComposer{
 
     public function compose(View $view)
     {
-        $teams=Team::where('active',0)->get();
-        $view->with('teams',$teams);
+        $teachers=Team::where('active',1)->latest()->paginate(4);
+        $view->with('teachers',$teachers);
     }
 }

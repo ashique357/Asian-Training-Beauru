@@ -75,7 +75,7 @@ class ProductController extends Controller
             $product->cover_image=json_encode($image);
         }
         elseif($a==3){
-            $product->name=$request->name[1];
+            $product->name=$request->name[2];
             $fieldname='tools_details';
             $detail=$this->richText($request,$fieldname);
             $product->tools_details=$detail;

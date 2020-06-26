@@ -11,10 +11,31 @@ use App\Traits\RichTextTrait;
 use App\Traits\EmailTrait;
 use App\Category;
 use App\Certificate;
+use Illuminate\Support\Facades\Auth;
+
 
 class CertificateController extends Controller
 {
     use ImageTrait,RichTextTrait,EmailTrait;
+
+    public function __construct()
+    {
+    $this->middleware(function ($request, $next) {
+        $this->user= Auth::check();
+        if($this->user==false){
+            return redirect('/login');
+        }
+        else{
+            $this->user=Auth::user();
+        if($this->user->role ==1){
+            return $next($request);
+        }
+        else{
+            return redirect('/login');
+        }
+        }
+    })->except(['benefitIndex','wayIndex','certificate','details','list']);
+}
 
     public function benefit(){
         $data=Landing::where('id',1)->first();

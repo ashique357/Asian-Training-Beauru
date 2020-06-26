@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         
+        
 
 
         /*
@@ -179,6 +180,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\AdminSeviceProvider::class,
         App\Providers\TeamServiceProvider::class,
+        App\Providers\ProductServiceProvider::class,
+        App\Providers\OpportunityServiceProvider::class,
+        App\Providers\CertificateServiceProvider::class,
+        App\Providers\TrainingEventServiceProvider::class,
         App\Providers\LandingPageServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
@@ -235,7 +240,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Image' => Intervention\Image\Facades\Image::class,
-
 
     ],
 

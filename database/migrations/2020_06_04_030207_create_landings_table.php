@@ -25,27 +25,17 @@ class CreateLandingsTable extends Migration
             
             //banner
             $table->string('banner_image')->nullable();
-            $table->string('banner_paragraph')->nullable();
             $table->string('banner_title')->nullable();
-            $table->string('banner_url')->nullable();
-            $table->string('btn_name')->nullable();
-
-            //course
-            $table->string('course_title')->nullable();
-            $table->string('course_url')->nullable();
             
-            //faculty
-            $table->string('faculty_title')->nullable();
-            $table->string('faculty_paragraph')->nullable();
-            $table->string('faculty_url')->nullable();
-           
+            //team
+            $table->string('team_title')->nullable();
+            $table->longText('team_details')->nullable();
 
             //extras
-            $table->string('fb_url')->nullable();
-            $table->string('twitt_url')->nullable();
-            $table->string('f_para1')->nullable();
-            $table->string('f_para2')->nullable();
-            $table->string('f_para3')->nullable();
+            
+            $table->longText('f_para1')->nullable();
+            $table->longText('f_para2')->nullable();
+            $table->longText('f_para3')->nullable();
 
             //about-section
             $table->string('about_image')->nullable();

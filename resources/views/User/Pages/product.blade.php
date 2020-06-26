@@ -42,6 +42,7 @@
                                 <div class="col-md-12">
                                 <div class="image side-image">
                                     <h6>Attached Files:</h6>
+                                    @if($product->filenames != 'null')
                                 @foreach(json_decode($product->filenames, true) as $image)
                                         <?php $extensions = pathinfo(storage_path($image), PATHINFO_EXTENSION);?>
                                             
@@ -61,6 +62,9 @@
                                                  </ul>
                                             
                                         @endforeach
+                                        @else
+                                        <p>No file attached</p>
+                                        @endif
                                         </div>
                                 </div>
                             </div>
@@ -101,7 +105,8 @@
                                 <div class="col-md-12">
                                 <div class="image side-image">
                                     <h6>Attached Files:</h6>
-                                @foreach(json_decode($product->filenames, true) as $image)
+                                    @if($product->filenames != 'null')
+                                    @foreach(json_decode($product->filenames, true) as $image)
                                         <?php $extensions = pathinfo(storage_path($image), PATHINFO_EXTENSION);?>
                                             
                                                  <ul>
@@ -120,6 +125,9 @@
                                                  </ul>
                                             
                                         @endforeach
+                                        @else
+                                        <p>No file attached</p>
+                                        @endif
                                         </div>
                                 </div>
                             </div>
@@ -137,7 +145,7 @@
                         </div>
                     </div>
                 </div>  <!-- row -->
-                @elseif($product->product_type==2) 
+                @elseif($product->product_type==3) 
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="shop-left pt-30">
@@ -155,6 +163,7 @@
                                 <div class="col-md-12">
                                 <div class="image side-image">
                                     <h6>Attached Files:</h6>
+                                    @if($product->filenames != 'null')
                                 @foreach(json_decode($product->filenames, true) as $image)
                                         <?php $extensions = pathinfo(storage_path($image), PATHINFO_EXTENSION);?>
                                             
@@ -174,6 +183,9 @@
                                                  </ul>
                                             
                                         @endforeach
+                                        @else
+                                        <p>No file attached</p>
+                                        @endif
                                         </div>
                                 </div>
                             </div>

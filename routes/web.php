@@ -20,17 +20,10 @@ Route::get('/login/{provider}/callback','Auth\LoginController@handleProviderCall
 
 // Admin routes
 Route::get('/admin/dashboard','AdminController@index');
-Route::get('/admin/landing-page-setup','AdminController@landing');
 
 //member-application
 Route::get('/member/registration','MemberController@index');
 Route::post('/member/registration','MemberController@store');
-
-
-Route::post('/top-nav','AdminController@topNav');
-Route::post('/banner','AdminController@banner');
-// Route::post('/course','AdminController@course');
-
 
 Route::get('/admin/about-us','AdminController@about_index');
 Route::post('/admin/about-us','AdminController@storeIndex');
@@ -45,6 +38,8 @@ Route::post('/admin/team-create','TeamController@store');
 Route::get('/admin/team/edit/{id}','TeamController@edit');
 Route::post('/admin/team/edit/{id}','TeamController@update');
 Route::post('/admin/team/delete/{id}','TeamController@delete');
+
+
 
 Route::get('/our-team', 'TeamController@team');
 Route::get('/our-team/{id}', 'TeamController@teamMember');
@@ -84,8 +79,8 @@ Route::post('/admin/opportunity-request/{id}/decline','AdminController@opportuni
 
 Route::get('/admin/resource','ProductController@index');
 Route::get('/admin/resource/{id}','ProductController@info');
-Route::get('/admin/resource/create','ProductController@create');
-Route::post('/admin/resource/create','ProductController@store');
+Route::get('/admin/resource-create','ProductController@create');
+Route::post('/admin/resource-create','ProductController@store');
 Route::get('/admin/resource/edit/{id}','ProductController@edit');
 Route::post('/admin/resource/edit/{id}','ProductController@update');
 
@@ -140,3 +135,16 @@ Route::get('/admin/category/edit/{id}','CategoryController@edit');
 Route::post('/admin/category/edit/{id}','CategoryController@update');
 Route::get('/admin/category/delete/{id}','CategoryController@delete');
 
+
+//landing Page setup
+Route::get('/admin/landing-page-setup/top-nav','AdminController@topNavIndex');
+Route::post('/admin/landing-page-setup/top-nav','AdminController@topNav');
+
+Route::get('/admin/landing-page-setup/banner','AdminController@slider');
+Route::post('/admin/landing-page-setup/banner','AdminController@postSlider');
+
+Route::get('/admin/landing-page-setup/footer','AdminController@footer');
+Route::post('/admin/landing-page-setup/footer','AdminController@PostFooter');
+
+Route::get('/admin/landing-page-setup/team','TeamController@selectForLanding');
+Route::post('/admin/landing-page-setup/team','TeamController@PostSelectForLanding');

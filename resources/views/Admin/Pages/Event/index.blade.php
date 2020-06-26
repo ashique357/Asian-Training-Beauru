@@ -55,7 +55,7 @@
                                         <td>{{$event->title}}</td>
                                         @if($event->event_type==1)
                                         <td>Training/Congress</td>
-                                        @elseif($product->product_type==2)
+                                        @elseif($event->event_type==2)
                                         <td>Networking</td>
                                         @endif
 

@@ -24,6 +24,6 @@ class TeamServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['User.Pages.*','includes.*'],'App\Http\View\Composers\TeamComposer');
+        View::composer(['new.edubin.includes.*','Admin.Pages.*'],'App\Http\View\Composers\TeamComposer');
     }
 }

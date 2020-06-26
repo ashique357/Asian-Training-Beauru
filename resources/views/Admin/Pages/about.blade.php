@@ -55,7 +55,7 @@
 								
 								<div class="form-group">
 									<strong>Details:</strong>
-									<textarea class="form-control summernote" name="about_content" >{!! $data['content']!!}</textarea>
+									<textarea class="form-control summernote" name="about_content" >{!! $data['about_content']!!}</textarea>
 							    </div>
 		
 								<div class="form-group">

@@ -24,6 +24,6 @@ class LandingPageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['includes.*','User.Pages.*','new.edubin.includes.*'],'App\Http\View\Composers\LandingComposer');    
+        View::composer(['new.edubin.includes.*','User.Pages.*','Admin.Pages.*'],'App\Http\View\Composers\LandingComposer');    
     }
 }

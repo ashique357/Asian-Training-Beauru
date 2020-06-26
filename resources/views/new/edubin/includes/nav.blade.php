@@ -4,7 +4,7 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="/">
-                                <img src="{{asset('uploads/logo/ATB.jpg')}}" alt="Logo" style="width:60%;margin-left:30px;padding-bottom:5px;">
+                                <img src="/extras/{{$data['logo']}}" alt="Logo" style="width:60%;margin-left:30px;padding-bottom:5px;">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-bar"></span>

@@ -43,99 +43,90 @@ class AdminController extends Controller
         return view('Admin.Pages.dashboard');
     }
 
-    public function landing(){
+    public function topNavIndex(){
         $data=Landing::where('id',1)->first();
-        if($data==null){
-            $data['address']="No data";
-            $data['email']="No data";
-            $data['phone']="No data";
-            $data['time']="No data";
-            $data['banner_image']="No data";
-            $data['banner_title']="No data";
-            $data['banner_paragraph']="No data";
-            $data['banner_url']="No data";
-            $data['btn_name']="No data";
-            $data['course_title']="No data";
-            $data['course_url']="No data";
-            $data['faculty_title']="No data";
-            $data['faculty_paragraph']="No data";
-            $data['faculty_url']="No data";
-            $data['fb_url']="No data";
-            $data['twitt_url']="No data";
-            $data['f_para1']="No data";
-            $data['f_para2']="No data";
-            $data['f_para3']="No data";
-            return view('Admin.Pages.landingPage')->with('data',$data);
+        if($data == null){
+            $data['address']="No address defined";
+            $data['time']="No time defined";
+            $data['email']="No email address is set";
+            $data['phone']="No phone number given";
+            $data['image']="Please select your website logo";
+            return view('Admin.Pages.Landing.topNav')->with(['data',$data]);
         }
         else{
-            return view('Admin.Pages.landingPage')->with('data',$data);
+            
+            return view('Admin.Pages.Landing.topNav')->with(['data',$data]);
         }
         
     }
 
-    public function topNav(TopNav $request){
-        $validated=$this->validate($request,$request->rules(),$request->messages());
-        $l=Landing::where('id',1)->first();
-        if($l == null){
-        $la=new landing();
-        $la->id=1;
-        $la->address=$request->address;
-        $la->email=$request->email;
-        $la->phone=$request->phone;
-        $la->time=$request->time;
-        $la->save();
-        return response()->json();    
+    public function topNav(Request $request){
+        $landing=Landing::where('id',1)->first();
+        if($landing==null){
+            $l=new Landing();
+            $l->id=1;
+            $l->address=$request->address;
+            $l->time=$request->time;
+            $l->email=$request->email;
+            $l->phone=$request->phone;
+            $image_field='logo';
+            $h=240;
+            $w=110;
+            $image=$this->imageUpload($request,$image_field,'/extras',$h,$w);
+            $l->logo=$image;
+            $l->save();
+            return redirect()->back()->with('sucess','Successfully added top nav bar content in landing page');
         }
         else{
-
-        $l->address=$request->address;
-        $l->email=$request->email;
-        $l->phone=$request->phone;
-        $l->time=$request->time;
-        $l->save();
-        return response()->json();
-
-     }
+            $landing->address=$request->address;
+            $landing->time=$request->time;
+            $landing->email=$request->email;
+            $landing->phone=$request->phone;
+            $image_field='logo';
+            $h=240;
+            $w=110;
+            $image=$this->imageUpload($request,$image_field,'/extras',$h,$w);
+            $landing->logo=$image;
+            $landing->save();
+            return redirect()->back()->with('sucess','Successfully added top nav bar content in landing page');
+        }
     }
 
-    public function banner(Banner $request){
-        $validated=$this->validate($request,$request->rules(),$request->messages());
-        $banner=Landing::where('id',1)->first();
-        if($banner == null){
-            $b=new landing();
-            $b->id=1;
-            $b->banner_title=$request->banner_title;
-            $b->banner_paragraph=$request->banner_paragraph;
-            $b->banner_url=$request->banner_url;
-            $b->btn_name=$request->btn_name;
-            if($request->hasFile('banner_image')){
-                $img=$request->file('banner_image');
-                $title= time().'.'.$img->getClientOriginalExtension();
-                $filePath=public_path('uploads/images');
-                $resize=Image::make($img);
-                $resize->resize(1920,722)->save($filePath.'/'.$title);
-                $b->banner_image=$resize->basename;
-            }
-            $b->save();
-            return response()->json();    
-            }
-            else{
-            $banner->banner_title=$request->banner_title;
-            $banner->banner_paragraph=$request->banner_paragraph;
-            $banner->banner_url=$request->banner_url;
-            $banner->btn_name=$request->btn_name;
-            if($request->hasFile('banner_image')){
-                $img=$request->file('banner_image');
-                $title= time().'.'.$img->getClientOriginalExtension();
-                $filePath=public_path('uploads/images');
-                $resize=Image::make($img);
-                $resize->resize(1920,722)->save($filePath.'/'.$title);
-                $banner->banner_image=$resize->basename;
-            }
-            $banner->save();
-            return response()->json();
-    
-         }
+
+    public function slider(){
+        $data=Landing::where('id',1)->first();
+        if($data == null){
+            $data['banner_title']="No title defined";
+            $data['banner_image']="No image selected";
+            return view('Admin.Pages.Landing.slider')->with(['data',$data]);
+        }
+        else{
+            
+            return view('Admin.Pages.Landing.slider')->with(['data',$data]);
+        }
+    }
+
+
+    public function postSlider(Request $request){
+        $landing=Landing::where('id',1)->first();
+        if($landing ==null){
+            $l=new Landing();
+            $l->id=1;
+            $l->banner_title=$request->banner_title;
+            $image_field='banner_image';
+            $image=$this->upload($request,$image_field,'/extras');
+            $l->banner_image=json_encode($image);
+            $l->save();
+            return redirect()->back()->with('sucess','Successfully added slider content in landing page');
+        }
+        else{
+            $landing->banner_title=$request->banner_title;
+            $image_field='banner_image';
+            $image=$this->upload($request,$image_field,'/extras');
+            $landing->banner_image=json_encode($image);
+            $landing->save();
+            return redirect()->back()->with('sucess','Successfully added slider content in landing page');
+        }
     }
 
     //about section
@@ -316,6 +307,38 @@ class AdminController extends Controller
         return view('Admin.Pages.Membership.index')->with('members',$members);
     }
 
+    public function footer(){
+        $data=Landing::where('id',1)->first();
+        if($data ==null){
+            $data['f_para1']="No paragraph";
+            $data['f_para2']="No paragraph";
+            $data['f_para3']="No paragraph";
+            return view('Admin.Pages.Landing.footer')->with('data',$data);
+        }
+        else{
+            return view('Admin.Pages.Landing.footer')->with('data',$data);
+        }
+    }
+
+    public function PostFooter(Request $request){
+        $data=Landing::where('id',1)->first();
+        if($data ==null){
+            $l=new Landing();
+            $l->f_para1=$request->f_para1;
+            $l->f_para2=$request->f_para2;
+            $l->f_para3=$request->f_para3;
+            $l->save();
+            return redirect()->back()->with('success', "You have successfully saved footer content");
+        }
+        else{
+            $data->f_para1=$request->f_para1;
+            $data->f_para2=$request->f_para2;
+            $data->f_para3=$request->f_para3;
+            $data->save();
+            return redirect()->back()->with('success', "You have successfully saved footer content");
+        }
+    }
+
     public function info($id){
         $m=Member::find($id);
         $country=$m->country;
@@ -390,6 +413,7 @@ class AdminController extends Controller
         $c=DB::table('countries')->where('id',$country)->first('name');
         return view('Admin.Pages.Opportunity.show')->with(['op'=>$op,'c'=>$c]);
     }
+
 
 }
 

@@ -7,6 +7,25 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->user= Auth::check();
+            if($this->user==false){
+                return redirect('/login');
+            }
+            else{
+                $this->user=Auth::user();
+            if($this->user->role ==1){
+                return $next($request);
+            }
+            else{
+                return redirect('/login');
+            }
+            }
+        });
+    }
     public function create(){
         return view('Admin.Pages.Category.create');
     }    

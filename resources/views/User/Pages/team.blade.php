@@ -27,19 +27,20 @@
          @foreach($teams as $team)
          <div class="col-lg-<?php echo $col_width ?> col-sm-<?php echo $col_width/2 ?>">
             <div class="singel-teachers mt-30 text-center">
+            <?php $x=urldecode($team->name); ?>
                <div class="image">
                   @if($team->image)
-                  <a href="/our-team/{{$team->name}}">
+                  <a href="/our-team/{{$x}}">
                   <img src="/uploads/images/{{$team->image}}" alt="" style="width:250px;height:250px;">
                   </a>
                   @else
-                  <a href="/our-team/{{$team->name}}">
+                  <a href="/our-team/{{$x}}">
                   <img src="/images/avatar.jpg" alt="">
                   </a>
                   @endif
                </div>
                <div class="cont">
-                  <a href="/our-team/{{$team->name}}">
+                  <a href="/our-team/{{$x}}">
                      <h6>{{$team->name}}</h6>
                   </a>
                   <span>{{$team->role}}</span>
@@ -53,6 +54,14 @@
       <!-- row -->
       <!-- row -->
    </div>
+   <div class="row">
+     <div class="col-md-7 offset-md-5">
+         <div class="pagination">
+         {{$teams->links()}}
+         </div>
+     </div> 
+   </div>
+      
    <!-- container -->
 </section>
 @endsection
