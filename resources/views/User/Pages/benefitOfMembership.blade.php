@@ -5,7 +5,7 @@
       <div class="row">
          <div class="col-lg-12">
             <div class="page-banner-cont">
-               <h2>Why Us?</h2>
+               <h2>Benefit of membership</h2>
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -39,10 +39,10 @@
                                <div class="categories mt-30">
                                    <h4>Quick Links</h4>
                                    <ul>
-                                       <li><a href="#">Benefit Of Membership</a></li>
+                                       <li><a href="benefit-of-membership">Benefit Of Membership</a></li>
                                        <li><a href="/way-to-become-a-member">How To Become A Member</a></li>
                                        <li><a href="/member/registration">Apply For Membership</a></li>
-                                       <li><a href="">Verify Member</a></li>
+                                       <li><a href="member-verify">Verify Member</a></li>
                                    </ul>
                                </div>
                            </div> <!-- categories -->

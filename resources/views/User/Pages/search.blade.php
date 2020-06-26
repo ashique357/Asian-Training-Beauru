@@ -45,10 +45,10 @@
                                <div class="categories mt-30">
                                    <h4>Quick Links</h4>
                                    <ul>
-                                   <li><a href="/benefit-of-membership">Benefit Of Membership</a></li>
-                                       <li><a href="#">How To Become A Member</a></li>
+                                       <li><a href="benefit-of-membership">Benefit Of Membership</a></li>
+                                       <li><a href="/way-to-become-a-member">How To Become A Member</a></li>
                                        <li><a href="/member/registration">Apply For Membership</a></li>
-                                       <li><a href="">Verify Member</a></li>
+                                       <li><a href="member-verify">Verify Member</a></li>
                                    </ul>
                                </div>
                            </div> <!-- categories -->
