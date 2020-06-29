@@ -44,9 +44,13 @@
                               <h6>{{$product->name}}</h6>
                            </a>
                         </div>
+                        <form action="/product/payment" method="post">
+                            @csrf
+                        <input type="hidden" name="product_id" value="{{$product->id}}">
                         <div class="button text-right">
-                           <a href="/resources/{{$x}}" class="main-btn">Buy Now</a>
+                           <button type="submit" class="main-btn" >Buy now</button>
                         </div>
+                        </form>
                      </div>
                   </div>
                   <!-- singel publication -->

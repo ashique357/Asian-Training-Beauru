@@ -50,7 +50,11 @@
                                 <td>Online & Classroom</td>
                                 @endif
                                 <td>{{$c->approx}}</td>
+                                <form action="/certificate/payment" method="post">
+                                    @csrf
+                                <input type="hidden" name="certificate_id" value="{{$c->id}}">
                                 <td><button class="btn btn-primary btn-sm" type="submit">Apply</button></td>
+                                </form>
                             </tr>
                             @endforeach
                         </tbody>

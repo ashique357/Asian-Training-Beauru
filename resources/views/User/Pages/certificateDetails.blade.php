@@ -119,10 +119,14 @@
                                         @endif</li>
                                     <li><i class="fa fa-user-o"></i>Students :  <span>100</span></li>
                                 </ul>
+                                <form action="/certificate/payment" method="post">
+                                @csrf
+                                <input type="hidden" name="certificate_id" value="{{$certificate->id}}">
                                 <div class="price-button pt-10">
                                     <span>Price : <b>{{$c->fees}} {{$c->currency}}</b></span>
-                                    <a href="#" class="main-btn">Enroll Now</a>
+                                    <input type="submit" name="submit" id="submit" class="main-btn register-submit d-witdth" value="Apply">
                                 </div>
+                                </form>
                             </div> <!-- course features -->
                         </div>
                         

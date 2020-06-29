@@ -72,17 +72,21 @@
                                     
                                     <ul>
                                         <li>
-                                            
+                                        <?php $x=urldecode($certificate->name); ?>
                                             <div class="form-group">
-                                            <a href="/certicate/details/{{$certificate->name}}">
+                                            <a href="/certicate/details/{{$x}}">
                                                 <input type="submit" name="submit" id="submit" class="main-btn register-submit d-witdth" value="Details">
                                             </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="form-group">
-                                             <a href="certificate/apply/{{$certificate->name}}"><input type="submit" name="submit" id="submit" class="main-btn register-submit d-witdth" value="Apply"></a>
-                                            </div>
+                                            <form action="/certificate/payment" method="post">
+                                                @csrf
+                                                <input type="hidden" name="certificate_id" value="{{$certificate->id}}">
+                                                <div class="form-group">
+                                                <input type="submit" name="submit" id="submit" class="main-btn register-submit d-witdth" value="Apply">
+                                                </div>
+                                            </form>
                                         </li>
                                     </ul>
                                     <hr>

@@ -135,6 +135,9 @@ Route::get('/admin/category/edit/{id}','CategoryController@edit');
 Route::post('/admin/category/edit/{id}','CategoryController@update');
 Route::get('/admin/category/delete/{id}','CategoryController@delete');
 
+Route::post('/certificate/payment','PaymentController@certificatePayment');
+Route::get('/payment/certificate/success/{id}', 'PaymentController@successCertificate')->name('certificate.payment.success');
+
 
 //landing Page setup
 Route::get('/admin/landing-page-setup/top-nav','AdminController@topNavIndex');
@@ -148,3 +151,9 @@ Route::post('/admin/landing-page-setup/footer','AdminController@PostFooter');
 
 Route::get('/admin/landing-page-setup/team','TeamController@selectForLanding');
 Route::post('/admin/landing-page-setup/team','TeamController@PostSelectForLanding');
+
+//product-payment
+
+Route::post('/product/payment','PaymentController@paymentProduct');
+Route::get('/cancel', 'PaymentController@cancel')->name('payment.cancel');
+Route::get('/payment/success/{id}', 'PaymentController@success')->name('payment.success');

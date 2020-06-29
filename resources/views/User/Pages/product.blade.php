@@ -79,9 +79,14 @@
                             <span>Publication Year:{{$product->publication}}</span><br>
                             <span>ISSN:{{$product->issn}}</span><br>
                             <p>{!!$product->content!!}</p>
-                            <div class="add-btn pt-15">
-                                <button type="button" class="main-btn">Add to Cart</button>
-                            </div>
+                            <form action="/product/payment" method="post">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                            
+                                <div class="add-btn pt-15">
+                                    <button type="submit" class="main-btn">Purchase</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>  <!-- row -->
@@ -139,9 +144,14 @@
                             <span>User:{{$product->price_user}} &nbsp{{$product->currency}}</span><br>
                             <span>Member:{{$product->price_member}} &nbsp{{$product->currency}}</span><br>
                             <p>{!!$product->material_details!!}</p>
-                            <div class="add-btn pt-15">
-                                <button type="button" class="main-btn">Add to Cart</button>
-                            </div>
+                            <form action="/product/payment" method="post">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                            
+                                <div class="add-btn pt-15">
+                                    <button type="submit" class="main-btn">Purchase</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>  <!-- row -->
@@ -197,9 +207,13 @@
                             <span>User:{{$product->price_user}} &nbsp{{$product->currency}}</span><br>
                             <span>Member:{{$product->price_member}} &nbsp{{$product->currency}}</span><br>
                             <p>{!!$product->tool_details!!}</p>
-                            <div class="add-btn pt-15">
-                                <button type="button" class="main-btn">Add to Cart</button>
-                            </div>
+                            <form action="/product/payment" method="post">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                <div class="add-btn pt-15">
+                                    <button type="submit" class="main-btn">Purchase</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

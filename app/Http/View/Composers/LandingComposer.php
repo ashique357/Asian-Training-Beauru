@@ -17,6 +17,7 @@ class LandingComposer{
             $data['email']="No data";
             $data['phone']="No data";
             $data['time']="No data";
+            $data['logo']="No data";
             $data['banner_image']="No data";
             $data['team_title']="No data";
             $data['team_details']="No data";

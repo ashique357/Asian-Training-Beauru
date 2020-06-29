@@ -155,6 +155,7 @@
                                  <option value="{{$c->id}}">{{$c->name}}</option>
                                  @endforeach
                               </select>
+                              <span><a href="/admin/category/create">Click to add category</a></span>
                            </div>
                            
                         <div class="form-group">

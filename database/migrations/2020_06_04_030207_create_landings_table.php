@@ -20,6 +20,7 @@ class CreateLandingsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('time')->nullable();
+            $table->string('logo')->nullable();
             //menu
            
             
