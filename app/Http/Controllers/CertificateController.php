@@ -11,6 +11,7 @@ use App\Traits\RichTextTrait;
 use App\Traits\EmailTrait;
 use App\Category;
 use App\Certificate;
+use App\Payment;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -206,6 +207,10 @@ class CertificateController extends Controller
     public function list(){
         $certificates=Certificate::latest()->paginate(10);
         return view('User.Pages.certificateApply')->with(['certificates'=>$certificates]);
+    }
+    public function paid(){
+        $paid=Payment::where('sell_type',2)->latest()->paginate(10);
+        return view('Admin.Pages.Payment.certificate')->with('paid',$paid);
     }
 }
 

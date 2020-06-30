@@ -5,13 +5,13 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Certificate List</h1>
+					<h1>Paid Resources</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a>
 						</li>
-						<li class="breadcrumb-item active"><a href="#">Certificate List</a>
+						<li class="breadcrumb-item active"><a href="#">Resource Payment</a>
 		 				</li>
 					</ol>
 				</div>
@@ -42,37 +42,39 @@
                                 <thead>
                                     <tr>
                                     <th scope="col" width="20px">#</th>
-                                    <th scope="col" width="100px">Name</th>
-                                    <th scope="col" width="120px">medium</th>
+                                    <th scope="col" width="100px">User name</th>
+                                    <th scope="col" width="120px">Product name</th>
+                                    <th scope="col" width="70px">Price</th>
+                                    <th scope="col" width="70px">Invoice number</th>
                                     <th scope="col" width="70px">View</th>
-                                    <th scope="col" width="70px">Edit</th>
-                                    <th scope="col" width="70px">Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($certificates as $c)
+                                @foreach($paid as $p)
                                     <tr>
-                                        <th scope="row">{{$loop->iteration}}</th>
-                                        <td>{{$c->name}}</td>
-                                        @if($c->medium==1)
-                                        <td>Online</td>
-                                        @elseif($c->medium==2)
-                                        <td>Classroom</td>
-                                        @elseif($c->medium==3)
-                                        <td>Online & Classroom</td>
-                                        @endif
-
-                                        <td><a href="/admin/certificate/{{$c->id}}"><button class="btn btn-primary btn-sm">View</button></a></td>
-                                        <td><a href="/admin/certificate/edit/{{$c->id}}"><button class="btn btn-primary btn-sm">Edit</button></a></td>
-                                        <td><a href="/admin/certificate/delete/{{$c->id}}"><button class="btn btn-danger btn-sm">Delete</button></a></td>
-                                    </tr>
-                                @endforeach
+                                    <th scope="row">{{$loop->iteration}}</th>
+                                    <td>{{$p->user->name}}</td>
+                                    <td>{{$p->product->name}}</td>
+                                    <td>{{$p->price}}</td>
+                                    <td>{{$p->invoice_id}}</td>
+									<form action="/admin/paid/product/details/{{$p->id}}" method="post">
+									@csrf
+                                    <td><button type="submit" class="btn btn-primary btn-sm">View</button></td>
+									</form>
+									</tr>
+                               @endforeach
                                 </tbody>         
                                 </table>
 							</div>
 						</div>
 					</div>
-                    {{$certificates->links()}}
+                    <div class="row">
+                        <div class="col-md-6 offset md-5">
+                            <div class="pagination">
+                                {{$paid->links()}}
+                            </div>
+                        </div>
+                    </div>
 			</div>
 			<!-- Slider Content -->
 		</div>

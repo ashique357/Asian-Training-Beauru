@@ -5,13 +5,23 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Resources</h1>
-				</div>
+                @if($paid->sell_type==1)
+					<h1>Paid Product Details</h1>
+                @elseif($paid->sell_type==2)
+                <h1>Paid Certificate Details</h1>
+                @endif
+                </div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a>
 						</li>
-                        <li class="breadcrumb-item active"><a href="#">Resources</a>
+                        <li class="breadcrumb-item active">
+                        @if($paid->sell_type==1)
+                        <a href="#">Paid Product Details</a>
+                        @elseif($paid->sell_type==2)
+                            <a href="#">Paid Certificate Details</a>
+                         @endif
+                        
 						</li>
 					</ol>
 				</div>
@@ -25,11 +35,12 @@
 			<!-- Slider Content -->
 			<div class="card card-default" id="banner">
 				<div class="card-header">
-					@if($event->event_type==1)
-                    <h3 class="card-title">Training/congress</h3>
-                    @elseif($event->event_type==2)
-                    <h3 class="card-title">Networking</h3>
-                    @endif
+                @if($paid->sell_type==1)
+                <h3 class="card-title">Paid Product Details</h3>
+                @elseif($paid->sell_type==2)
+                <h3 class="card-title">Paid Certificate Details</h3>
+                @endif
+                    <h3 class="card-title">Paid Product Details</h3>
 					<div class="card-tools">
 						<button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
 						</button>
@@ -43,84 +54,82 @@
 						<div class="row">
 							<div class="col-md-12">
                                 <div class="content">
-                                <div class="row">
+                                    <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Event Banner</strong></h6>
+                                            <h6><strong class="heading">Product name:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <a href="/events/{{$event->image}}"><p class="text-details"><img src="/events/{{$event->image}}" alt="" style="height:195;width:160"></p></a>
+                                            <p class="text-details">{{$paid->product->name}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Event Name</strong></h6>
+                                            <h6><strong class="heading">Buyer name:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$event->title}}</p>
+                                            <p class="text-details">{{$paid->user->name}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Date:</strong></h6>
+                                            <h6><strong class="heading">Buyer email:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$event->date}}</p>
+                                            <p class="text-details">{{$paid->user->email}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Time:</strong></h6>
+                                            <h6><strong class="heading">Product type:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$event->time}}</p>
+                                            @if($paid->sell_type==1)
+                                                @if($paid->product->product_type==1)
+                                                <p class="text-details">Book</p>
+                                                @elseif($paid->product->product_type==2)
+                                                <p class="text-details">Material</p>
+                                                @elseif($paid->product->product_type==3)
+                                                <p class="text-details">Tool</p>
+                                                @endif
+                                            @elseif($paid->sell_type==2)
+                                            <p class="text-details">Certificate</p>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Location:</strong></h6>
+                                            <h6><strong class="heading">Price:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$event->location}}</p>
+                                            <p class="text-details">{{$paid->price}} USD</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Purpose:</strong></h6>
+                                            <h6><strong class="heading">Invoice number:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{!!$event->purpose!!}</p>
+                                            <p class="text-details">{{$paid->invoice_id}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Contact Person:</strong></h6>
+                                            <h6><strong class="heading">Token:</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                        <p class="text-details">{{$event->contact}}</p>
+                                            <p class="text-details">{{$paid->token}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <h6><strong class="heading">Fees:</strong></h6>
+                                            <h6><strong class="heading">Payer ID</strong></h6>
                                         </div>
                                         <div class="col-md-9">
-                                            <p class="text-details">{{$event->fees}}</p>
+                                            <p class="text-details">{{$paid->payerId}}</p>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <h6><strong class="heading">Registration option:</strong></h6>
-                                        </div>
-                                        <div class="col-md-9">
-                                        @if($event->registration ==0)
-                                            <p class="text-details">No registration option</p>
-                                        @else
-                                        <p class="text-details">Registration option is availabe</p>
-                                        @endif
-                                        </div>
-                                    </div>
-                                </div>
-                              
+                        
+                                </div>    
 							</div>
 						</div>
 					</div>

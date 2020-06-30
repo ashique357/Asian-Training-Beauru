@@ -10,6 +10,7 @@ use App\Traits\ImageTrait;
 use App\Traits\RichTextTrait;
 use App\Traits\EmailTrait;
 use Illuminate\Support\Facades\Auth;
+use App\Payment;
 
 class ProductController extends Controller
 {
@@ -189,5 +190,15 @@ class ProductController extends Controller
     public function show($name){
         $product=Product::where('name',$name)->firstOrFail();
         return view('User.Pages.product')->with(['product'=>$product]);
+    }
+
+    public function paid(){
+        $paid=Payment::where('sell_type',1)->latest()->paginate(10);
+        return view('Admin.Pages.Payment.resource')->with('paid',$paid);
+    }
+
+    public function paidShow($id){
+        $paid=Payment::findOrfail($id);
+        return view('Admin.Pages.Payment.show')->with('paid',$paid);
     }
 }

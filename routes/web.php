@@ -157,3 +157,8 @@ Route::post('/admin/landing-page-setup/team','TeamController@PostSelectForLandin
 Route::post('/product/payment','PaymentController@paymentProduct');
 Route::get('/cancel', 'PaymentController@cancel')->name('payment.cancel');
 Route::get('/payment/success/{id}', 'PaymentController@success')->name('payment.success');
+
+//payment
+Route::get('/admin/paid/resources','ProductController@paid');
+Route::get('/admin/paid/certificates','CertificateController@paid');
+Route::post('/admin/paid/product/details/{id}','ProductController@paidShow');
