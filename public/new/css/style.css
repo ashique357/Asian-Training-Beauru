@@ -4030,3 +4030,29 @@ a.loginhere-link:hover {
   table.fixed td { overflow: hidden; }
 
  
+  .sidebar{
+      height: 100%;
+  }
+  ul.nav-side {
+    padding: 0px;
+    margin: 0px;
+}
+.nav-side li{
+    padding: 10px;
+    border-bottom: 1px solid #021d3a;
+    margin-top: 1px;
+    z-index: 999;
+}
+
+.nav-side li a{
+    font-size:14px;
+    font-weight: 700;
+    color: #08294d;
+}
+
+.nav-side li a:hover{
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+

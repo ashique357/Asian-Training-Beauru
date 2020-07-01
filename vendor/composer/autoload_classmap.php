@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Certificate' => $baseDir . '/app/Certificate.php',
+    'App\\Chapter' => $baseDir . '/app/Chapter.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Event' => $baseDir . '/app/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -52,6 +53,7 @@ return array(
     'App\\Mail\\MembershipMail' => $baseDir . '/app/Mail/MembershipMail.php',
     'App\\Member' => $baseDir . '/app/Member.php',
     'App\\Opportunity' => $baseDir . '/app/Opportunity.php',
+    'App\\Payment' => $baseDir . '/app/Payment.php',
     'App\\Product' => $baseDir . '/app/Product.php',
     'App\\Providers\\AdminSeviceProvider' => $baseDir . '/app/Providers/AdminSeviceProvider.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
@@ -70,7 +72,6 @@ return array(
     'App\\Traits\\ImageTrait' => $baseDir . '/app/Traits/ImageTrait.php',
     'App\\Traits\\RichTextTrait' => $baseDir . '/app/Traits/RichTextTrait.php',
     'App\\User' => $baseDir . '/app/User.php',
-    'App\\payment' => $baseDir . '/app/payment.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
     'Brick\\Math\\BigDecimal' => $vendorDir . '/brick/math/src/BigDecimal.php',

@@ -69,11 +69,8 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="">Chapter<button class="sub-nav-toggler"> <i class="fa fa-chevron-down"></i> </button></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Singapore</a></li>
-                                            <li><a href="">Bangladesh</a></li>
-                                        </ul>
+                                        <a href="/chapter">Chapter<button class="sub-nav-toggler"> <i class="fa fa-chevron-down"></i> </button></a>
+                                        
                                     </li>
                                 </ul>
                             </div>

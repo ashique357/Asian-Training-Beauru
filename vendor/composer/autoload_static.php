@@ -512,6 +512,7 @@ class ComposerStaticInit5775a8e10b930e084f83e7db48e57bbc
     public static $classMap = array (
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Certificate' => __DIR__ . '/../..' . '/app/Certificate.php',
+        'App\\Chapter' => __DIR__ . '/../..' . '/app/Chapter.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -556,6 +557,7 @@ class ComposerStaticInit5775a8e10b930e084f83e7db48e57bbc
         'App\\Mail\\MembershipMail' => __DIR__ . '/../..' . '/app/Mail/MembershipMail.php',
         'App\\Member' => __DIR__ . '/../..' . '/app/Member.php',
         'App\\Opportunity' => __DIR__ . '/../..' . '/app/Opportunity.php',
+        'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
         'App\\Product' => __DIR__ . '/../..' . '/app/Product.php',
         'App\\Providers\\AdminSeviceProvider' => __DIR__ . '/../..' . '/app/Providers/AdminSeviceProvider.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -574,7 +576,6 @@ class ComposerStaticInit5775a8e10b930e084f83e7db48e57bbc
         'App\\Traits\\ImageTrait' => __DIR__ . '/../..' . '/app/Traits/ImageTrait.php',
         'App\\Traits\\RichTextTrait' => __DIR__ . '/../..' . '/app/Traits/RichTextTrait.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\payment' => __DIR__ . '/../..' . '/app/payment.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
