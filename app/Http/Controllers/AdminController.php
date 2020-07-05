@@ -17,6 +17,8 @@ use App\Member;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MembershipMail;
 use App\Opportunity;
+use App\Payment;
+use App\User;
 
 class AdminController extends Controller
 {   use ImageTrait,RichTextTrait,EmailTrait;
@@ -40,7 +42,13 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('Admin.Pages.dashboard');
+        $product=Payment::where('sell_type',1)->sum('price');
+        $certificate=Payment::where('sell_type',2)->sum('price');
+        $sell=Payment::all()->sum('price');
+        $member=Member::where('approved',1)->count();
+        $all=Member::all()->count();
+        $user=User::where('role',0)->count();
+        return view('Admin.Pages.dashboard')->with(['product'=>$product,'certificate'=>$certificate,'member'=>$member,'all'=>$all,'user'=>$user,'sell'=>$sell]);
     }
 
     public function topNavIndex(){
