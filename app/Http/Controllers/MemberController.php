@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Intervention\Image\ImageManager;
 use Image;
 use App\Traits\ImageTrait;
+use App\Http\Requests\Member as ReqMember;
 
 
 
@@ -26,42 +27,48 @@ class MemberController extends Controller
         $countries=DB::table('countries')->get();
         return view('User.Pages.application')->with('countries',$countries);
     }
-
-    public function store(Request $request){
+ 
+    public function store(ReqMember $request){
         $m=new Member();
         //individual
-        $m->name=$request->name;
-        $m->country=$request->country;
-        $m->email=$request->email;
-        $m->phone=$request->phone;
-        $m->address=$request->address;
-        $m->desg=$request->desg;
-        $m->linkedin=$request->linkedin;
-        $m->exp=$request->exp;
-        $m->msg=$request->msg;
-        $image_field='photo';
-        $h=150;
-        $w=150;
-        $image=$this->imageUpload($request,$image_field,'/member',$h,$w);
-        $m->photo=$image;
+        $val=$m->member_type=$request->member_type;
+        if($val==1){
+            $m->name=$request->name[0];
+            $m->country=$request->country;
+            $m->email=$request->email[0];
+            $m->phone=$request->phone[0];
+            $m->address=$request->address[0];
+            $m->desg=$request->desg;
+            $m->linkedin=$request->linkedin;
+            $m->exp=$request->exp[0];
+            $m->msg=$request->msg[0];
+            $image_field='photo';
+            $h=150;
+            $w=150;
+            $image=$this->imageUpload($request,$image_field,'/member',$h,$w);
+            $m->photo=$image;
+        }
         //provider
-        $m->tp_name=$request->tp_name;
-        $m->tp_email=$request->tp_email;
-        $m->tp_address=$request->tp_address;
-        $m->web=$request->web;
-        $m->tp_exp=$request->tp_exp;
-        $m->tp_phone=$request->tp_phone;
-        $m->con_person=$request->con_person;
-        $m->tp_msg=$request->tp_msg;
+        if($val==2){
+            $m->name=$request->name[1];
+            $m->email=$request->email[1];
+            $m->address=$request->address[1];
+            $m->web=$request->web;
+            $m->exp=$request->exp[1];
+            $m->phone=$request->phone[1];
+            $m->con_person=$request->con_person[0];
+            $m->msg=$request->msg[1];
+        }
+        if($val==3){
+            $m->name=$request->name[2];
+            $m->employee=$request->employee;
+            $m->con_person=$request->con_person[1];
+            $m->email=$request->email[2];
+            $m->phone=$request->phone[2];
+            $m->msg=$request->msg[2];
+        }
         //corporate
-        $m->org_name=$request->org_name;
-        $m->employee=$request->employee;
-        $m->org_con_person=$request->org_con_person;
-        $m->org_email=$request->org_email;
-        $m->org_phone=$request->org_phone;
-        $m->org_msg=$request->org_msg;
         
-        $m->member_type=$request->member_type;
         $m->approved=0;
         $m->reg_id=mt_rand(1000000, 9999999);
         $m->user_id=Auth::user()->id;

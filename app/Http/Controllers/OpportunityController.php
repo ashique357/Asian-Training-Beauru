@@ -63,7 +63,7 @@ class OpportunityController extends Controller
             $p->image=$image;
             
         }
-
+ 
         if($val==2){
             $p->org_name=$request->org_name[1];
             $c=DB::table('countries')->where('id',$request->country)->first('nicename');

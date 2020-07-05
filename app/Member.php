@@ -10,10 +10,10 @@ class Member extends Model
     'name','country','email','phone','address','desg','exp','photo','msg','linkedin',
     
     //provider
-    'tp_name','tp_email','tp_address','tp_phone','tp_msg','con_person','web',
+    'con_person','web',
     
     //corporate
-    'org_name','employee','org_con_person','org_email','org_phone','org_msg'
+    'employee',
     ];
 
     protected $hidden=[

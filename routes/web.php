@@ -163,9 +163,9 @@ Route::get('/admin/paid/resources','ProductController@paid');
 Route::get('/admin/paid/certificates','CertificateController@paid');
 Route::post('/admin/paid/product/details/{id}','ProductController@paidShow');
 
-Route::get('/dashboard',function(){
-    return view('User.Pages.Individual.dashboard');
-});
+// Route::get('/dashboard',function(){
+//     return view('User.Pages.Individual.dashboard');
+// });
 
 Route::get('/admin/chapter','ChapterController@index');
 Route::get('/admin/chapter/{id}','ChapterController@show');

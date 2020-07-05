@@ -5,7 +5,7 @@
       <div class="row">
          <div class="col-lg-12">
             <div class="page-banner-cont">
-               <h2>Register</h2>
+               <h2>Member Register</h2>
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -36,10 +36,10 @@
                         <option value="3">Corporate</option>
                      </select>
                </div>
-
+ 
                <div id="individual" hidden>
                   <div class="form-group">
-                     <input type="text" class="form-input" name="name" id="name" placeholder="User name" autocomplete="name" autofocus>
+                     <input type="text" class="form-input" name="name[]" id="name" placeholder="User name" autocomplete="name" autofocus>
                      @error('name')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input type="email" class="form-input" name="email" id="email" placeholder="E-mail" autocomplete="email" autofocus>
+                     <input type="email" class="form-input" name="email[]" id="email" placeholder="E-mail" autocomplete="email" autofocus>
                      @error('email')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="address" type="text" class="form-input" placeholder="Address" name="address" value="{{ old('address') }}"  autocomplete="address" autofocus>
+                     <input id="address" type="text" class="form-input" placeholder="Address" name="address[]"   autocomplete="address" autofocus>
                      @error('address')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="phone" type="phone" class="form-input" placeholder="Phone" name="phone" value="{{ old('phone') }}"  autocomplete="Phone" autofocus>
+                     <input id="phone" type="phone" class="form-input" placeholder="Phone" name="phone[]"   autocomplete="Phone" autofocus>
                      @error('phone')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="photo" type="file" class="form-input" name="photo" value="{{ old('photo') }}"  autocomplete="photo" autofocus>
+                     <input id="photo" type="file" class="form-input" name="photo"  autocomplete="photo" autofocus>
                      @error('phone')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="desg" type="text" class="form-input" placeholder="Designation Organization" name="desg" value="{{ old('desg') }}"  autocomplete="desg" autofocus>
+                     <input id="desg" type="text" class="form-input" placeholder="Designation Organization" name="desg"   autocomplete="desg" autofocus>
                      @error('con_person')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
@@ -100,7 +100,7 @@
                      @enderror                       
                   </div>
                   <div class="form-group">
-                     <input id="exp" type="text" class="form-input" placeholder="Year of experience" name="exp" value="{{ old('exp') }}"  autocomplete="exp" autofocus>
+                     <input id="exp" type="text" class="form-input" placeholder="Year of experience" name="exp[]" autofocus>
                      @error('exp')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
@@ -108,7 +108,7 @@
                      @enderror                        
                   </div>
                   <div class="form-group">
-                     <input id="linkedin" type="text" class="form-input" placeholder="Linkedin" name="linkedin" value="{{ old('linkedin') }}"  autocomplete="linkedin" autofocus>
+                     <input id="linkedin" type="text" class="form-input" placeholder="Linkedin" name="linkedin"   autocomplete="linkedin" autofocus>
                      @error('linkedin')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
@@ -116,7 +116,7 @@
                      @enderror                        
                   </div>
                   <div class="form-group">
-                     <textarea id="msg" rows="4" cols="50" class="form-input" placeholder="Say something about yourself...." name="msg" value="{{ old('msg') }}" style="height: auto !important"></textarea>
+                     <textarea id="msg" rows="4" cols="50" class="form-input" placeholder="Say something about yourself...." name="msg[]"  style="height: auto !important"></textarea>
                      @error('msg')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
@@ -127,8 +127,8 @@
                
                <div id="provider" hidden>
                   <div class="form-group">
-                     <input type="text" class="form-input" name="tp_name" id="tp_name" placeholder="Training Provider Name">
-                     @error('tp_name')
+                     <input type="text" class="form-input" name="name[]" id="name" placeholder="Training Provider Name">
+                     @error('name')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
@@ -148,15 +148,15 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="tp_address" type="text" class="form-input" placeholder="Address" name="tp_address" value="{{ old('tp_address') }}"  autocomplete="tp_address" autofocus>
-                     @error('tp_address')
+                     <input id="tp_address" type="text" class="form-input" placeholder="Address" name="address[]"   autocomplete="tp_address" autofocus>
+                     @error('address')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="web" class="form-input" name="web" placeholder="Web address" value="{{ old('web') }}" >
+                     <input id="web" class="form-input" name="web" placeholder="Web address">
                      @error('web')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
@@ -164,15 +164,15 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="tp_exp" type="text" class="form-input" placeholder="Year of establishment" name="tp_exp" value="{{ old('tp_exp') }}"  autocomplete="tp_exp" autofocus>
-                     @error('tp_exp')
+                     <input id="tp_exp" type="text" class="form-input" placeholder="Year of establishment" name="exp[]"  autocomplete="exp" autofocus>
+                     @error('exp')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
                      </span>
                      @enderror                        
                   </div>
                   <div class="form-group">
-                     <input id="con_person" type="text" class="form-input" placeholder="Contact Persons's Name" name="con_person" value="{{ old('con_person') }}"  autocomplete="con_person" autofocus>
+                     <input id="con_person" type="text" class="form-input" placeholder="Contact Persons's Name" name="con_person[]"   autocomplete="con_person" autofocus>
                      @error('con_person')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
@@ -180,24 +180,24 @@
                      @enderror                       
                   </div>
                   <div class="form-group">
-                     <input id="tp_email" type="email" class="form-input" placeholder="Contact Person Email" name="tp_email" value="{{ old('tp_email') }}"  autocomplete="tp_email" autofocus>
-                     @error('tp_email')
+                     <input id="tp_email" type="email" class="form-input" placeholder="Contact Person Email" name="email[]"  autocomplete="email" autofocus>
+                     @error('email')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
                      @enderror                       
                   </div>
                   <div class="form-group">
-                     <input id="tp_phone" type="text" class="form-input" placeholder="Contact Person Phone" name="tp_phone" value="{{ old('tp_phone') }}"  autocomplete="tp_phone" autofocus>
-                     @error('tp_phone')
+                     <input id="tp_phone" type="text" class="form-input" placeholder="Contact Person Phone" name="phone[]"  autocomplete="phone" autofocus>
+                     @error('phone')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
                      @enderror
                   </div>
                   <div class="form-group">
-                     <textarea id="msg" rows="4" cols="50" class="form-input" placeholder="Say something about your Training organization...." name="tp_msg" value="{{ old('tp_msg') }}" style="height: auto !important"></textarea>
-                     @error('tp_msg')
+                     <textarea id="msg" rows="4" cols="50" class="form-input" placeholder="Say something about your Training organization...." name="msg[]"  style="height: auto !important"></textarea>
+                     @error('msg')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
                      </span>
@@ -206,8 +206,8 @@
                </div>
                <div id="corporate" hidden>
                   <div class="form-group">
-                     <input type="text" class="form-input" name="org_name" id="name" placeholder="Organization Name">
-                     @error('org_name')
+                     <input type="text" class="form-input" name="name[]" id="name" placeholder="Organization Name">
+                     @error('name')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
@@ -227,8 +227,8 @@
                      @enderror
                   </div>
                   <div class="form-group">
-                     <input id="employee" type="text" class="form-input" placeholder="Number of employee" name="employee" value="{{ old('employee') }}"  autocomplete="employee" autofocus>
-                     @error('address')
+                     <input id="employee" type="text" class="form-input" placeholder="Number of employee" name="employee"   autocomplete="employee" autofocus>
+                     @error('employee')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
@@ -236,32 +236,32 @@
                   </div>
                   
                   <div class="form-group">
-                     <input id="con_person" type="text" class="form-input" placeholder="Contact Person Name" name="org_con_person" value="{{ old('org_con_person') }}"  autocomplete="org_con_person" autofocus>
-                     @error('org_con_person')
+                     <input id="con_person" type="text" class="form-input" placeholder="Contact Person Name" name="con_person[1]"   autocomplete="con_person[]" autofocus>
+                     @error('con_person')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
                      </span>
                      @enderror                       
                   </div>
                   <div class="form-group">
-                     <input id="email" type="email" class="form-input" placeholder="Contact Person Email" name="org_email" value="{{ old('org_email') }}"  autocomplete="org_email" autofocus>
-                     @error('org_email')
+                     <input id="email" type="email" class="form-input" placeholder="Contact Person Email" name="email[]"   autocomplete="email" autofocus>
+                     @error('email')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
                      @enderror                       
                   </div>
                   <div class="form-group">
-                     <input id="phone" type="text" class="form-input" placeholder="Contact Person Phone" name="org_phone" value="{{ old('org_phone') }}"  autocomplete="Phone" autofocus>
-                     @error('org_phone')
+                     <input id="phone" type="text" class="form-input" placeholder="Contact Person Phone" name="phone[]"   autocomplete="Phone" autofocus>
+                     @error('phone')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                      </span>
                      @enderror
                   </div>
                   <div class="form-group">
-                     <textarea id="msg" rows="4" cols="50" class="form-input" placeholder="Say something about your organization...." name="org_msg" value="{{ old('org_msg') }}" style="height: auto !important"></textarea>
-                     @error('org_msg')
+                     <textarea id="msg" rows="4" cols="50" class="form-input" placeholder="Say something about your organization...." name="msg[]"  style="height: auto !important"></textarea>
+                     @error('msg')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message}}</strong>
                      </span>

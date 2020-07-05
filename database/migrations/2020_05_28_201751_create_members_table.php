@@ -30,22 +30,11 @@ class CreateMembersTable extends Migration
             // $table->string('org')->nullable();
             
             // provider
-            $table->string('tp_name')->nullable();
-            $table->string('tp_email')->nullable();
-            $table->string('tp_address')->nullable();
-            $table->string('tp_phone')->nullable();
             $table->string('web')->nullable();
-            $table->string('tp_exp')->nullable();
-            $table->longText('tp_msg')->nullable();
             $table->string('con_person')->nullable();
 
             // corporate
-            $table->string('org_name')->nullable();
             $table->string('employee')->nullable();
-            $table->string('org_con_person')->nullable();
-            $table->string('org_email')->nullable();
-            $table->string('org_phone')->nullable();
-            $table->longText('org_msg')->nullable();
             
             $table->string('member_type');
             $table->boolean('approved')->default('0');

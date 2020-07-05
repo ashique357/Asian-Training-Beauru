@@ -44,6 +44,11 @@ return [
         'client_secret' => env('LINKEDIN_SECRET'),
         'redirect' => env('LINKEDIN_REDIRECT_URI'),
     ],
+    // 'facebook' => [
+    //     'client_id' => env('FACEBOOK_KEY'),
+    //     'client_secret' => env('FACEBOOK_SECRET'),
+    //     'redirect' => env('FACEBOOK_REDIRECT_URI')
+    // ],
     'facebook' => [
         'client_id' => env('FACEBOOK_KEY'),
         'client_secret' => env('FACEBOOK_SECRET'),

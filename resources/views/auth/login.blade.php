@@ -49,7 +49,7 @@
                <div class="form-group">
                   <input type="submit" name="submit" id="submit" class="main-btn register-submit" value="Sign up">
                   @if (Route::has('password.request'))
-                  <a class="btn btn-link" href="{{ route('password.request') }}">
+                  <a class="btn btn-link" href="">
                   {{ __('Forgot Your Password?') }}
                   </a>
                   @endif
