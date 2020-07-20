@@ -30,12 +30,17 @@
                         <div class="shop-left pt-30">
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-image-1" role="tabpanel" aria-labelledby="pills-image-1-tab">
-                                  
+                                @if($product->cover_image != 'null')
                                     @foreach(json_decode($product->cover_image, true) as $image)
                                     <div class="shop-image">
                                         <a href="" class="shop-items"><img src="{{URL::to('/products/'.$image)}}"></a>
                                     </div>
                                      @endforeach
+                                @else
+                                    <div class="shop-image">
+                                        <a href="" class="shop-items"><img src=""></a>
+                                    </div>
+                                @endif
                                 </div>
                             </div>
                             <div class="row" style="margin-top:20px">
@@ -99,11 +104,17 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-image-1" role="tabpanel" aria-labelledby="pills-image-1-tab">
                                   
+                                @if($product->cover_image != 'null')
                                     @foreach(json_decode($product->cover_image, true) as $image)
                                     <div class="shop-image">
                                         <a href="" class="shop-items"><img src="{{URL::to('/products/'.$image)}}"></a>
                                     </div>
                                      @endforeach
+                                @else
+                                    <div class="shop-image">
+                                        <a href="" class="shop-items"><img src=""></a>
+                                    </div>
+                                @endif
                                 </div>
                             </div>
                             <div class="row" style="margin-top:20px">
@@ -162,11 +173,17 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-image-1" role="tabpanel" aria-labelledby="pills-image-1-tab">
                                   
+                                @if($product->cover_image != 'null')
                                     @foreach(json_decode($product->cover_image, true) as $image)
                                     <div class="shop-image">
-                                        <a href="images/shop-singel/ss-1.jpg" class="shop-items"><img src="{{URL::to('/products/'.$image)}}"></a>
+                                        <a href="" class="shop-items"><img src="{{URL::to('/products/'.$image)}}"></a>
                                     </div>
                                      @endforeach
+                                @else
+                                    <div class="shop-image">
+                                        <a href="" class="shop-items"><img src=""></a>
+                                    </div>
+                                @endif
                                 </div>
                             </div>
                             <div class="row" style="margin-top:20px">

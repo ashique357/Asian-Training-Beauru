@@ -110,7 +110,7 @@ class OpportunityController extends Controller
         return view('User.Pages.jobs')->with(['jobs'=>$jobs]);
     }
     public function cons(){
-        $cons=Opportunity::find(1,'id')->firstOrFail();
+        // $cons=Opportunity::find(1,'id')->firstOrFail();
         $cons=Opportunity::where('active',1)->where('post_type',3)->latest()->paginate(3);
         return view('User.Pages.consultations')->with(['cons'=>$cons]);
     }

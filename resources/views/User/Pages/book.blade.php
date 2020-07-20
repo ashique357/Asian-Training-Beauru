@@ -31,11 +31,17 @@
                <div class="col-md-<?php echo $col_width ?>">
                   <div class="singel-publication mt-30">
                      <div class="thum">
+                     @if($product['cover_image'] != 'null')
                         @foreach(json_decode($product->cover_image, true) as $image)
                         <div class="image cart-image">
                            <img src="{{URL::to('/products/'.$image)}}">
                         </div>
                         @endforeach
+                     @else
+                        <div class="image cart-image">
+                           <img src="">
+                        </div>
+                     @endif
                      </div>
                      <?php $x=urldecode($product->name); ?>
                      <div class="cont">

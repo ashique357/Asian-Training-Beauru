@@ -1,5 +1,5 @@
 <section id="slider-part" class="slider-active">
-@if($data['banner_image'] != 'No data')
+@if( $data['banner_image'] != null)
 
 @foreach(json_decode($data['banner_image'], true) as $image)
 <div class="single-slider bg_cover pt-150" style="background-image: url(/extras/{{$image}})" data-overlay="4">
