@@ -13,11 +13,19 @@
             @foreach($products as $product)
                 <div class="col-lg-3 col-md-6 col-sm-8">
                     <div class="singel-publication mt-30">
+                    @if($product['cover_image'] !="null")
+                    
                     @foreach(json_decode($product['cover_image'], true) as $image)
+                    
                             <div class="image cart-image">
                             <img src="{{URL::to('/products/'.$image)}}">
                             </div>
                         @endforeach
+                    @else
+                        <div class="image cart-image">
+                            <img src="">
+                            </div>
+                    @endif
                         <div class="cont">
                             <div class="name">
                                 <a href="/resources/{{$product['name']}}"><h6>{{$product['name']}} </h6></a>

@@ -48,11 +48,11 @@
                </div>
                <div class="form-group">
                   <input type="submit" name="submit" id="submit" class="main-btn register-submit" value="Sign up">
-                  @if (Route::has('password.request'))
+                  <!-- @if (Route::has('password.request'))
                   <a class="btn btn-link" href="">
                   {{ __('Forgot Your Password?') }}
                   </a>
-                  @endif
+                  @endif -->
                </div>
                <span class="span-social">or try our socials</span>
                <ul class="socail-signup">

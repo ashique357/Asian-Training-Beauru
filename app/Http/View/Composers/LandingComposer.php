@@ -37,6 +37,8 @@ class LandingComposer{
             $data['membership_image']="No data";
             $data['membership_way']="No data";
             $data['membership_benefit']="No data";
+            $data['certification_benefit']="No data";
+            $data['way_to_certified']="No data";
             $view->with('data',$data);
         }
         else{
