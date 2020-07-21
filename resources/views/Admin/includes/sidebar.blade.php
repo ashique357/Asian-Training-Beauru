@@ -268,7 +268,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/chapter/create" class="nav-link">
+                <a href="/admin/chapter-create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>

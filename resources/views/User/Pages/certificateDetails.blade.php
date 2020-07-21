@@ -117,11 +117,11 @@
                                         @elseif($c->medium==3)
                                         <span>Online & Classroom</span>
                                         @endif</li>
-                                    <li><i class="fa fa-user-o"></i>Students :  <span>100</span></li>
+                                    <!-- <li><i class="fa fa-user-o"></i>Students :  <span>100</span></li> -->
                                 </ul>
                                 <form action="/certificate/payment" method="post">
                                 @csrf
-                                <input type="hidden" name="certificate_id" value="{{$certificate->id}}">
+                                <input type="hidden" name="certificate_id" value="{{$c->id}}">
                                 <div class="price-button pt-10">
                                     <span>Price : <b>{{$c->fees}} {{$c->currency}}</b></span>
                                     <input type="submit" name="submit" id="submit" class="main-btn register-submit d-witdth" value="Apply">

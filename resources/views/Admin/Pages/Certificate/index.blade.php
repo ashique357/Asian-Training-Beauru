@@ -65,14 +65,14 @@
                                         <td><a href="/admin/certificate/{{$c->id}}"><button class="btn btn-primary btn-sm">View</button></a></td>
                                         <td><a href="/admin/certificate/edit/{{$c->id}}"><button class="btn btn-primary btn-sm">Edit</button></a></td>
                                         <td><a href="/admin/certificate/delete/{{$c->id}}"><button class="btn btn-danger btn-sm">Delete</button></a></td>
-                                    </tr>
+                                    </tr> 
                                 @endforeach
                                 </tbody>         
                                 </table>
 							</div>
 						</div>
 					</div>
-                    {{$certificates->links()}}
+					
 			</div>
 			<!-- Slider Content -->
 		</div>

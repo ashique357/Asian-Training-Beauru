@@ -169,7 +169,7 @@ Route::post('/admin/paid/product/details/{id}','ProductController@paidShow');
 
 Route::get('/admin/chapter','ChapterController@index');
 Route::get('/admin/chapter/{id}','ChapterController@show');
-Route::get('/admin/chapter/create','ChapterController@create');
+Route::get('/admin/chapter-create','ChapterController@create');
 Route::post('/admin/chapter/create','ChapterController@store');
 Route::get('/admin/chapter/edit/{id}','ChapterController@edit');
 Route::post('/admin/chapter/edit/{id}','ChapterController@update');

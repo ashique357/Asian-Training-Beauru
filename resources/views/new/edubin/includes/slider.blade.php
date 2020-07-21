@@ -1,5 +1,5 @@
 <section id="slider-part" class="slider-active">
-@if( $data['banner_image'] != null)
+@if( ($data['banner_image'] != null) && ($data['banner_image'] != "No data"))
 
 @foreach(json_decode($data['banner_image'], true) as $image)
 <div class="single-slider bg_cover pt-150" style="background-image: url(/extras/{{$image}})" data-overlay="4">
@@ -36,3 +36,7 @@
 </div>
 @endif
 </section>
+<!-- 
+DB_DATABASE=traiszav_Asian_Training_Beauru
+DB_USERNAME=traiszav_asian
+DB_PASSWORD=)167Ashique -->
