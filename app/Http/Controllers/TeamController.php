@@ -109,6 +109,9 @@ class TeamController extends Controller
         return view('Admin.Pages.Team.TeamLanding')->with('teams',$teams);
     }
     public function PostSelectForLanding(Request $request){
+        $this->validate($request, [
+            'team'=>'required'
+        ]);
         $landing=Landing::where('id',1)->first();
         if($landing ==null){
             $l=new Landing();
@@ -118,7 +121,7 @@ class TeamController extends Controller
             foreach($request->team as $q){
                 $t=Team::where('id',$q)->firstOrFail();
                 $t->active=1;
-                $t->save();
+                $t->save(); 
             }
             $l->save();
             return redirect()->back()->with('success', 'You have successfully saved team content in landing page');

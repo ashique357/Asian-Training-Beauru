@@ -50,10 +50,16 @@
 								</div>
 
                                 <div class="form-group">
+								<label for="">Select team members(4)</label>
+								@if($teams !=null)
                                     @foreach($teams as $team)
-                                    <input type="checkbox" id="team" name="team[]" value="{{$team->id}}">
+                                    <input type="checkbox" id="team" name="team[]" value="{{$team->id}}" required>
                                     <label for="team"> {{$team->name}}</label><br>
                                     @endforeach
+								@else
+									<a href="/admin/team-create">Please add team members first</a>
+								@endif
+									
 								</div>
 
 								<div class="form-group">

@@ -6,16 +6,15 @@
                         <h2>{{$data['team_title']}}</h2>
                     </div> <!-- section title -->
                     <div class="teachers-cont">
-                    {!!substr($data['team_details'],106,889)!!}
+                        {!!substr($data['team_details'],106,889)!!}
                         <a href="/our-team" class="main-btn mt-55">Learn More</a>
-                    </div>
                     </div> <!-- teachers cont -->
                 </div>
                 <div class="col-lg-6 offset-lg-1">
                     <div class="teachers mt-20">
                         <div class="row">
                         @foreach($teachers as $t)
-                            <div class="col-sm-6">
+                            <div class="col-lg-6">
                                 <div class="singel-teachers mt-30 text-center">
                                     <div class="image">
                                         <img src="/uploads/images/{{$t['image']}}">
