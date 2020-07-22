@@ -20,6 +20,7 @@
 </section>
 
 <section id="event-singel" class="pt-120 pb-120 gray-bg">
+@include('flash')
         <div class="container">
             <div class="events-area">
                 <div class="row">
@@ -35,12 +36,23 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="events-right">
+                        @if($event->registration ==1)
                             <div class="events-coundwon bg_cover" data-overlay="8">
-                                
-                                <div class="events-coundwon-btn pt-30">
-                                    <a href="#" class="main-btn">Book Your Seat</a>
-                                </div>
+                                <form action="/event-booking" method="post">
+                                @csrf
+                                    <input type="hidden" name="event_id" value="{{$event->id}}">
+                                    <div class="events-coundwon-btn pt-30">
+                                        <button type="submit" class="main-btn">Book Your Seat</button>
+                                    </div>
+                                </form>
                             </div> <!-- events coundwon -->
+                        @else
+                        <div class="events-coundwon bg_cover" data-overlay="8">
+                                  <div class="events-coundwon-btn pt-30">
+                                        <button type="submit" class="main-btn">No registration</button>
+                                    </div>
+                            </div>
+                        @endif
                             <div class="events-address mt-30">
                                 <ul>
                                     <li>

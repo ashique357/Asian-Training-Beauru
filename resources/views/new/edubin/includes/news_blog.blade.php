@@ -1,24 +1,14 @@
 <section id="news-part" class="pt-115 pb-110">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-50">
-                        <h5>Latest News</h5>
-                        <h2>From the Opportunities</h2>
-                    </div> <!-- section title -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="section-title pb-50">
-                        <h5>Latest News</h5>
-                        <h2>From the Events</h2>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row">
 
             <!-- opportunities -->
             
                 <div class="col-lg-6">
+                    <div class="section-title pb-50">
+                        <h5>Latest News</h5>
+                        <h4>From the Opportunities</h4>
+                    </div> <!-- section title -->
                     <div class="singel-news news-list">
                     @foreach($opportunities as $op)
                         <div class="row">
@@ -42,12 +32,17 @@
                                    </div>
                             </div>
                         </div> <!-- row -->
+                        <br>
                         @endforeach
                     </div> <!-- singel news -->
                 </div>
                
                 <!-- Events -->
                 <div class="col-lg-6">
+                    <div class="section-title pb-50">
+                        <h5>Latest News</h5>
+                        <h4>From the Events</h4>
+                    </div> <!-- section title -->
                     <div class="singel-news news-list">
                     @foreach($events as $event)
                         <div class="row">
@@ -68,6 +63,7 @@
                                 </div>
                             </div>
                         </div> <!-- row -->
+                        <br>
                         @endforeach
                     </div> <!-- singel news -->
                     

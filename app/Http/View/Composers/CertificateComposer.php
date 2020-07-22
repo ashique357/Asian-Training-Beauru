@@ -11,7 +11,7 @@ class CertificateComposer{
 
     public function compose(View $view)
     {
-        $certificates=Certificate::latest()->get();
+        $certificates=Certificate::latest()->paginate(5);
         $view->with('certificates',$certificates);
     }
 }

@@ -44,5 +44,9 @@ class User extends Authenticatable
     public function teams(){
         return $this->hasMany('App\Team');
     }
+
+    public function events(){
+        return $this->belongsToMany('App\Event','event_user','event_id','user_id')->withPivot('id');
+    }
 }
 

@@ -31,7 +31,7 @@
                                     </ul>
                                     
                                     <span>(20 Reviws)</span> -->
-                                    <p>No of participents:<span>100</span></p><br>
+                                    <!-- <p>No of participents:<span>100</span></p><br> -->
                                     <a href=""><h4>{{$certificate->name}}</h4></a>
                                     
                                     <ul>

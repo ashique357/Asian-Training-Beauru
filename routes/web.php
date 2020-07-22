@@ -102,6 +102,7 @@ Route::get('/event/congress','EventController@seminar_index');
 Route::get('/event/networking','EventController@networking_index');
 Route::get('/event/{slug}','EventController@eventShow');
 
+Route::post('/event-booking','EventController@booking');
 //certification
 
 Route::get('/admin/certification-benefit','CertificateController@benefit');

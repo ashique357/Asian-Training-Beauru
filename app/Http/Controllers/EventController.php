@@ -105,4 +105,12 @@ class EventController extends Controller
         $event=Event::where('title',$name)->firstOrFail();
         return view('User.Pages.eventShow')->with(['event'=>$event]);
     }
+
+    public function booking(Request $request){
+        $user_id=$this->user->id;
+        $event_id=$request->event_id;
+        $event=Event::where('id',$event_id)->firstOrFail();
+        $a=$event->users()->sync($user_id);
+        return redirect()->back()->with('success', "Successfully booked your seat"); 
+    }
 }
