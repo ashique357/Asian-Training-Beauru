@@ -97,11 +97,11 @@ Route::post('/admin/event/create','EventController@store');
 Route::get('/admin/event/edit/{id}','EventController@edit');
 Route::post('/admin/event/edit/{id}','EventController@update');
 Route::get('/admin/event/{id}','EventController@show');
+Route::get('/admin/event/registered/{id}','EventController@registeredUser');
 
 Route::get('/event/congress','EventController@seminar_index');
 Route::get('/event/networking','EventController@networking_index');
 Route::get('/event/{slug}','EventController@eventShow');
-
 Route::post('/event-booking','EventController@booking');
 //certification
 

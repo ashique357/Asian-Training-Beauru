@@ -113,4 +113,10 @@ class EventController extends Controller
         $a=$event->users()->sync($user_id);
         return redirect()->back()->with('success', "Successfully booked your seat"); 
     }
+
+    public function registeredUser($id){
+        $event=Event::where('id',$id)->firstOrFail();
+        $users=$event->users()->latest()->paginate(10);
+        return view('Admin.Pages.Event.eventRegister')->with('users',$users);
+    }
 }

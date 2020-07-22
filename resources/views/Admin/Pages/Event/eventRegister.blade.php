@@ -5,13 +5,13 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Event/Training List</h1>
+					<h1>Event/Training Registration Details</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a>
 						</li>
-						<li class="breadcrumb-item active"><a href="#">Event/Training List</a>
+						<li class="breadcrumb-item active"><a href="#">Event/Training Registration Details</a>
 		 				</li>
 					</ol>
 				</div>
@@ -35,34 +35,30 @@
 				@include('flash')
 				<!-- /.card-header -->
 					<div class="card-body">
+                    <p><strong>Number of registered user:</strong> {{$users->count()}}</p>
 						<div class="row">
 							<div class="col-md-12">
                             <table class="table table-striped fixed">
-                            
                                 <thead>
                                     <tr>
-                                    <th scope="col" width="20px">#</th>
-                                    <th scope="col" width="100px">Name</th>
-                                    <th scope="col" width="100px">Event Type</th>
-                                    <th scope="col" width="50px">Details</th>
-                                    <th scope="col" width="50px">Edit</th>
-									<th scope="col" width="70px">Registration Detail</th>
+                                        <th scope="col" width="20px">#</th>
+                                        <th scope="col" width="100px">Name</th>
+                                        <th scope="col" width="100px">Email</th>
+                                        <th scope="col" width="50px">Membership</th>
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
-                                @foreach($events as $event)
+                                @foreach($users as $user)
                                     <tr>
                                         <th scope="row">{{$loop->iteration}}</th>
-                                        <td>{{$event->title}}</td>
-                                        @if($event->event_type==1)
-                                        <td>Training/Congress</td>
-                                        @elseif($event->event_type==2)
-                                        <td>Networking</td>
+                                        <th scope="row"> {{$user->name}}</th>
+                                        <th scope="row"> {{$user->email}}</th>
+                                        @if($user->meber ==0)
+                                        <th scope="row"> No</th>
+                                        @elseif($user->member==1)
+                                        <th scope="row"> Yes</th>
                                         @endif
-
-                                        <td><a href="/admin/event/{{$event->id}}"><button class="btn btn-primary btn-sm">View</button></a></td>
-                                        <td><a href="/admin/event/edit/{{$event->id}}"><button class="btn btn-primary btn-sm">Edit</button></a></td>
-										<td><a href="/admin/event/registered/{{$event->id}}"><button class="btn btn-primary btn-sm" style="background-color:orange;color:black">Details</button></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>         
@@ -70,7 +66,7 @@
 							</div>
 						</div>
 					</div>
-                    {{$events->links()}}
+                    {{$users->links()}}
 			</div>
 			<!-- Slider Content -->
 		</div>
