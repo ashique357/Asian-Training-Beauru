@@ -1,4 +1,3 @@
-  
   <!--====== jquery js ======-->
   <script src="{{asset('new/js/vendor/modernizr-3.6.0.min.js')}}"></script>
     <script src="{{asset('new/js/vendor/jquery-1.12.4.min.js')}}"></script>

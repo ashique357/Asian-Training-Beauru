@@ -56,6 +56,7 @@ Route::get('/admin/membership-request','AdminController@indexMember');
 Route::get('/admin/membership-request/{id}','AdminController@info');
 Route::post('/admin/membership-request/{id}/accept','AdminController@accept');
 Route::post('/admin/membership-request/{id}/decline','AdminController@declined');
+Route::get('/admin/member/verify','AdminController@verified');
 
 //search member verification
 Route::get('/member-verify','MemberController@search');
@@ -178,3 +179,8 @@ Route::get('/admin/chapter/delete/{id}','ChapterController@delete');
 
 Route::get('/chapter','ChapterController@IndexUser');
 Route::get('/chapter/{name}','ChapterController@ShowUser');
+
+
+Route::get('/member/timeline','PostController@create');
+Route::post('/member/timeline','PostController@store');
+Route::post('/member/timeline-comment','CommentController@store');

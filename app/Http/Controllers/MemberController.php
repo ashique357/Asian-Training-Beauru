@@ -29,7 +29,13 @@ class MemberController extends Controller
     }
  
     public function store(ReqMember $request){
-        $m=new Member();
+        $u=Auth::user()->id;
+        $d=Member::where('user_id',$u)->count();
+        if($d>0){
+            return redirect()->back()->with('error','You can not have multiple membership account');
+        }
+        else{
+            $m=new Member();
         //individual
         $val=$m->member_type=$request->member_type;
         if($val==1){
@@ -75,6 +81,7 @@ class MemberController extends Controller
         $m->save();
         return redirect()->back()->with('success', 'Congratulation!!!
         You have successfully applied for the membership.Stay Connected');
+        }
         
     }
 

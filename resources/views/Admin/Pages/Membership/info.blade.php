@@ -78,13 +78,13 @@
                      @elseif($m->member_type ==2)
                      <div class="widget-user-header bg-warning">
                         <!-- /.widget-user-image -->
-                        <h3 class="widget-user-username">{{$m->tp_name}}</h3>
+                        <h3 class="widget-user-username">{{$m->name}}</h3>
                         <h5 class="widget-user-desc">{{$m->reg_id}}</h5>
                      </div>
                      <div class="card-footer p-0">
                         <ul class="nav flex-column">
                            <li class="nav-item"> <a href="#" class="nav-link">
-                              Address:&nbsp<span class="float-right badge bg-success">{{$m->tp_address}}</span>
+                              Address:&nbsp<span class="float-right badge bg-success">{{$m->address}}</span>
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
@@ -100,7 +100,7 @@
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
-                              Year of establishment:&nbsp <span class="float-right badge bg-danger">{{$m->tp_exp}}</span>
+                              Year of establishment:&nbsp <span class="float-right badge bg-danger">{{$m->exp}}</span>
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
@@ -108,11 +108,11 @@
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
-                           Contact Person's Email:&nbsp <span class="float-right badge bg-primary">{{$m->tp_email}}</span>
+                           Contact Person's Email:&nbsp <span class="float-right badge bg-primary">{{$m->email}}</span>
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
-                           Contact Person's Phone:&nbsp <span class="float-right badge bg-info">{{$m->tp_phone}}</span>
+                           Contact Person's Phone:&nbsp <span class="float-right badge bg-info">{{$m->phone}}</span>
                               </a>
                            </li>
                         </ul>
@@ -130,15 +130,15 @@
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
-                              Contact Person's Name:&nbsp <span class="float-right badge bg-info">{{$m->org_con_person}}</span>
+                              Contact Person's Name:&nbsp <span class="float-right badge bg-info">{{$m->con_person}}</span>
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
-                           Contact Person's Email:&nbsp <span class="float-right badge bg-primary">{{$m->org_email}}</span>
+                           Contact Person's Email:&nbsp <span class="float-right badge bg-primary">{{$m->email}}</span>
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">
-                           Contact Person's Phone:&nbsp <span class="float-right badge bg-info">{{$m->org_phone}}</span>
+                           Contact Person's Phone:&nbsp <span class="float-right badge bg-info">{{$m->phone}}</span>
                               </a>
                            </li>
                            <li class="nav-item"> <a href="#" class="nav-link">

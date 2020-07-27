@@ -5,7 +5,7 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Member Request</h1>
+					<h1>Verified Member</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
@@ -13,7 +13,7 @@
 						</li>
 						<li class="breadcrumb-item active"><a href="#">Membership</a>
 		 				</li>
-						<li class="breadcrumb-item active">Member Request</li>
+						<li class="breadcrumb-item active">Verified Member</li>
 					</ol>
 				</div>
 			</div>
@@ -46,21 +46,20 @@
                                     <th scope="col" width="100px">Name</th>
                                     <th scope="col" width="120px">Email</th>
                                     <th scope="col" width="90px">Contact No</th>
-									<th scope="col" width="100px">Application Type</th>
+                                    <th scope="col" width="90px">Registration ID</th>
+									<th scope="col" width="100px">Member Type</th>
                                     <th scope="col" width="70px">Details</th>
-                                    <th scope="col" width="70px">Accept</th>
-                                    <th scope="col" width="70px">Decline</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($members as $m)
                                     <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    
 									<td>{{$m->name}}</td>
                                     <td>{{$m->email}}</td>
                                     <td>{{$m->phone}}</td>
-									@if($m->member_type == 1)
+                                    <td>{{$m->reg_id}}</td>
+                                    @if($m->member_type == 1)
 									<td>Individual</td>
 									@elseif($m->member_type == 2)
 									<td>Training Provider</td>
@@ -68,18 +67,6 @@
 									<td>Corporate</td>
 									@endif
                                     <td><a href="/admin/membership-request/{{$m->id}}"><button class="btn btn-primary btn-sm">View Info</button></a></td>
-                                    @if($m->approved==0)
-									<form action="/admin/membership-request/{{$m->id}}/accept" method="post">
-									@csrf
-									<td><a href=""><button class="btn btn-primary btn-sm">Accept</button></a></td>
-									</form>
-									@else
-									<td>Accepted</td>
-									@endif
-									<form action="/admin/membership-request/{{$m->id}}/decline" method="post">
-									@csrf
-                                    <td><a href=""><button class="btn btn-danger btn-sm">Decline</button></a></td>
-									</form>
 									</tr>
                                 @endforeach
                                 </tbody>         

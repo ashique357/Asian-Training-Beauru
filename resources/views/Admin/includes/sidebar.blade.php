@@ -136,7 +136,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/membership/verified" class="nav-link">
+                <a href="/admin/member/verify" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Verified Member</p>
                 </a>

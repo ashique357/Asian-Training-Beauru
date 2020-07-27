@@ -21,4 +21,8 @@ trait EmailTrait {
         }
  
     }
+
+    // public function sendInvoice(){
+
+    // }
 }

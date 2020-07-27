@@ -361,7 +361,7 @@ class AdminController extends Controller
         $b->member='1';
         $b->save();
         $member->save();
-        $template='email.membership';
+        $template='email.membership'; 
         $to_name=$member->name;
         $to_email=$member->email;
         $subject='Application for membership';
@@ -422,6 +422,10 @@ class AdminController extends Controller
         return view('Admin.Pages.Opportunity.show')->with(['op'=>$op,'c'=>$c]);
     }
 
+    public function verified(){
+        $members=Member::where('approved',1)->latest()->paginate(10);
+        return view('Admin.Pages.Membership.verified')->with('members',$members);
+    }
 
 }
 
